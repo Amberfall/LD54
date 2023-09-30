@@ -5,6 +5,8 @@ using UnityEngine;
 public class ItemTileController : MonoBehaviour
 {
 
+    public GameObject child_tile;
+
     public abstract class State
     {
         public abstract State step(float floor_height, ItemTileController tile_controller);
@@ -225,9 +227,6 @@ public class ItemTileController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Set the item tile to be invisible
-        // Renderer renderer = gameObject.GetComponent<Renderer>();
-        // renderer.enabled = false;
     }
 
     public void Eject()
@@ -280,6 +279,7 @@ public class ItemTileController : MonoBehaviour
     {
 
         RectTransform rectTransform = GetComponent<RectTransform>();
+        RectTransform child_rect_transform = child_tile.GetComponent<RectTransform>();
 
         float y_size = this.get_y_size(bagSize);
 
@@ -287,8 +287,12 @@ public class ItemTileController : MonoBehaviour
         float x_min = x_center - x_width / 2.0f;
         float x_max = x_center + x_width / 2.0f;
 
-        rectTransform.anchorMin = new Vector2(x_min, state.y_pos + 0.01f);
-        rectTransform.anchorMax = new Vector2(x_max, state.y_pos + y_size - 0.01f);
+        // Update only y pos for me, and only x pos for child
+        rectTransform.anchorMin = new Vector2(0, state.y_pos);
+        rectTransform.anchorMax = new Vector2(1, state.y_pos + get_nominal_y_size(bagSize));
+
+        child_rect_transform.anchorMin = new Vector2(x_min, 0.01f);
+        child_rect_transform.anchorMax = new Vector2(x_max, this.state.Height() - 0.01f);
     }
 
     // Update is called once per frame

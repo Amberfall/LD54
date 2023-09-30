@@ -5,7 +5,7 @@ using UnityEngine;
 public class BagController : MonoBehaviour
 {
 
-    // public static Gun gun_instance;
+    Gun gun_instance;
     private List<GameObject> tiles = new List<GameObject>();
     private List<GameObject> tiles_heading_out = new List<GameObject>();
     public GameObject itemTilePrefab;
@@ -15,12 +15,10 @@ public class BagController : MonoBehaviour
 
     int suckables_size = 0;
 
-    int maxBagSpace = 10;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        gun_instance = Gun.instance;
     }
 
     public void AddSuckable(Suckable suckable)
@@ -34,7 +32,7 @@ public class BagController : MonoBehaviour
 
         for (int i = 0; i < tiles.Count; i++)
         {
-            float y_size = tiles[i].GetComponent<ItemTileController>().get_y_size(maxBagSpace);
+            float y_size = tiles[i].GetComponent<ItemTileController>().get_y_size(gun_instance.maxBagSpace);
             float tile_top = tiles[i].GetComponent<ItemTileController>().state.y_pos + y_size;
             if (tile_top > top_pos)
                 top_pos = tile_top;
@@ -83,17 +81,10 @@ public class BagController : MonoBehaviour
 
             bool falling = bottom_pos > last_top_pos || last_falling;
 
-            // if (falling)
-            // {
-            //     tile_controller.state.y_pos = bottom_pos - 0.01f;
-            //     if (tile_controller.state.y_pos < last_top_pos)
-            //         tile_controller.state.y_pos = last_top_pos;
-            // }
-
             tile_controller.update_state(last_top_pos);
 
-            last_top_pos = bottom_pos + tile_controller.get_y_size(maxBagSpace);
-            tile_controller.update_position(maxBagSpace, tile_x_pos, tile_x_width);
+            last_top_pos = bottom_pos + tile_controller.get_y_size(gun_instance.maxBagSpace);
+            tile_controller.update_position(gun_instance.maxBagSpace, tile_x_pos, tile_x_width);
             // tile_controller.was_falling = falling;
         }
     }
@@ -101,23 +92,25 @@ public class BagController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (gun_instance.suckables.Count > suckables_size)
-        // {
-        //     for (int i = suckables_size; i < gun_instance.suckables.Count; i++)
-        //     {
-        //         AddSuckable(gun_instance.suckables[i]);
-        //     }
-        // }
+        if (gun_instance.suckables.Count > suckables_size)
+        {
+            for (int i = suckables_size; i < gun_instance.suckables.Count; i++)
+            {
+                AddSuckable(gun_instance.suckables[i]);
+            }
+        }
 
-        // if (gun_instance.suckables.Count < suckables_size)
-        // {
-        //     for (int i = suckables_size - 1; i >= gun_instance.suckables.Count; i--)
-        //     {
-        //         tiles[i].GetComponent<ItemTileController>().Squish();
-        //     }
-        // }
+        if (gun_instance.suckables.Count < suckables_size)
+        {
+            for (int i = suckables_size - 1; i >= gun_instance.suckables.Count; i--)
+            {
+                Eject();
+            }
+        }
 
-        // suckables_size = gun_instance.suckables.Count;
+        suckables_size = gun_instance.suckables.Count;
+
+        // Now do positioning stuff
         PositionTiles();
 
         for (int i = tiles_heading_out.Count - 1; i >= 0; i--)
@@ -125,7 +118,7 @@ public class BagController : MonoBehaviour
             ItemTileController tile_controller = tiles_heading_out[i].GetComponent<ItemTileController>();
             tiles_heading_out[i].GetComponent<ItemTileController>().update_state(0.0f);
 
-            tile_controller.update_position(maxBagSpace, tile_x_pos, tile_x_width);
+            tile_controller.update_position(gun_instance.maxBagSpace, tile_x_pos, tile_x_width);
             if (tile_controller.cleanup)
             {
                 Destroy(tiles_heading_out[i]);
