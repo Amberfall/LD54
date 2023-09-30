@@ -253,6 +253,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &70298685
 Rigidbody2D:
   serializedVersion: 4
@@ -522,6 +523,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &162062107
 Rigidbody2D:
   serializedVersion: 4
@@ -940,7 +942,7 @@ Transform:
   m_GameObject: {fileID: 299225210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.96, y: 18.86, z: 0}
+  m_LocalPosition: {x: 15.8, y: 15.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1150,6 +1152,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &336566130
 Rigidbody2D:
   serializedVersion: 4
@@ -1429,6 +1432,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!61 &515452321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1606,7 +1610,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.982229, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1763,6 +1767,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 3
   currentLife: 3
+  _yDamagePopupOffset: 0
   movementSpeed: 3
 --- !u!4 &548289171
 Transform:
@@ -1858,7 +1863,7 @@ Transform:
   m_GameObject: {fileID: 573051682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.748985, y: 16.710775, z: 0}
+  m_LocalPosition: {x: -17.1, y: 14.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2785,10 +2790,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 53.333332, y: 30}
-      - {x: -30, y: 30}
-      - {x: -30, y: -30}
-      - {x: 53.33333, y: -30}
+    - - {x: 29.829731, y: 21.741978}
+      - {x: -23.488869, y: 21.741978}
+      - {x: -23.488869, y: -25.076948}
+      - {x: 29.988537, y: -25.076948}
   m_UseDelaunayMesh: 0
 --- !u!4 &1374618985
 Transform:
@@ -2929,6 +2934,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &1496661050
 Rigidbody2D:
   serializedVersion: 4
@@ -3129,6 +3135,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 3
   currentLife: 3
+  _yDamagePopupOffset: 0
   movementSpeed: 3
 --- !u!61 &1508957941
 BoxCollider2D:
@@ -3288,6 +3295,7 @@ MonoBehaviour:
   _dashTime: 0.2
   _dashSpeed: 20
   _dashCooldown: 1
+  _iFrameTime: 1
   maxLife: 0
   currentLife: 0
 --- !u!50 &1549847660
@@ -3357,6 +3365,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 0
   currentLife: 0
+  _yDamagePopupOffset: 0
 --- !u!1 &1620522073
 GameObject:
   m_ObjectHideFlags: 0
