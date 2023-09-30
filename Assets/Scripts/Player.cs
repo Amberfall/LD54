@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
     private PlayerInputHandler _input;
     private Rigidbody2D _rb;
     [SerializeField] private float _movementSpeed;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         _input = GetComponent<PlayerInputHandler>();
         _rb = GetComponent<Rigidbody2D>();
     }
