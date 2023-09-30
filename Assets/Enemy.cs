@@ -26,4 +26,21 @@ public class Enemy : Suckable
         }
     }
 
+    protected override void HandleCollisionWhileShot(Collision2D other)
+    {
+        if (other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable))
+        {
+            damageable.Damage(damage);
+            if (other.transform.tag == "Enemy")
+            {
+                Damage(1);
+            }
+        }
+    }
+
+    protected override void HandleDamageTaken(int amount)
+    {
+        DamagePopupManager.instance.CreatePopup(transform.position + Vector3.up * _yDamagePopupOffset, amount);
+    }
+
 }
