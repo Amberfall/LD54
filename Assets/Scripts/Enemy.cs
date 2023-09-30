@@ -6,10 +6,12 @@ public class Enemy : Suckable, IDamageable
 {
     private Player _player;
     public float movementSpeed;
+    [SerializeField] private Lifebar _lifebar;
     protected override void Initialization()
     {
         base.Initialization();
         _player = Player.instance;
+        _lifebar = GetComponentInChildren<Lifebar>();
     }
     protected override void IdleState()
     {
@@ -36,14 +38,36 @@ public class Enemy : Suckable, IDamageable
             damageable.Damage(damage);
             if (other.transform.tag == "Enemy")
             {
-                Damage(1);
+                // Self damage
+                Damage(5);
             }
+        }
+    }
+
+    protected override void HandleOnTriggerStay(Collider2D other)
+    {
+        if (other.tag == "Player" && suckableState == SuckableState.Idle)
+        {
+            other.GetComponent<IDamageable>().Damage(damage);
+            Debug.Log("!!");
         }
     }
 
     protected override void HandleDamageTaken(int amount)
     {
         DamagePopupManager.instance.CreatePopup(transform.position + Vector3.up * _yDamagePopupOffset, amount);
+        _lifebar.SetLife((float)currentLife / maxLife);
+    }
+
+    protected override void HandleShoot()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Shot");
+    }
+
+    protected override void GoToIdleState()
+    {
+        base.GoToIdleState();
+        gameObject.layer = LayerMask.NameToLayer("Enemy");
     }
 
 }

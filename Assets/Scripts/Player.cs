@@ -74,7 +74,9 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (_canBeDamaged && !_isDashing)
         {
-            currentLife -= amount;
+            // Check for reduced damage power up
+            int n = Gun.instance.CheckForPowerUp(PowerUpType.defensive);
+            currentLife -= (int)((float)amount / (n + 1));
             if (currentLife <= 0)
             {
                 // DIE
