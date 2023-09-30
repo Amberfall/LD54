@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Pool
     originalName: 
-    pivot: {x: 0.49174917, y: -0.037037037}
+    pivot: {x: 0.48854962, y: -0.13127413}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 303
-      height: 297
+      width: 262
+      height: 259
     spriteID: bbadd0df3dbee3e4e97cf7d996037bc1
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: Pool
       frameIndex: 0
       cellRect:
-        x: 11
-        y: 11
-        width: 303
-        height: 297
+        x: 32
+        y: 34
+        width: 262
+        height: 259
       spriteId: bbadd0df3dbee3e4e97cf7d996037bc1
     linkedCells: []
     parentIndex: -1
