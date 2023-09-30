@@ -13,6 +13,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private float _movementSpeed;
     [SerializeField] private Transform _gun;
     public Vector2 gunDirection;
+    [SerializeField] private SpriteRenderer _sp;
+    [SerializeField] private SpriteRenderer _spGun;
 
     [Header("Dash stuff")]
     private bool _isDashing;
@@ -68,6 +70,10 @@ public class Player : MonoBehaviour, IDamageable
         // If the player is at the center of the screen
         gunDirection = (_input.mousePosition - (Vector2)transform.position).normalized;
         _gun.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, gunDirection));
+
+        _sp.flipX = gunDirection.x > 0;
+        _spGun.flipY = gunDirection.x < 0;
+
     }
 
     public void Damage(int amount)
