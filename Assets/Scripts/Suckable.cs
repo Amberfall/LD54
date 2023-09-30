@@ -27,8 +27,9 @@ public class Suckable : MonoBehaviour, IDamageable
     [Header("Suckable Data")]
     public Sprite sprite;
     public int size;
+    public int baseDamage;
     public int damage;
-    public bool isUpgrade;
+    public bool isPowerUp;
 
     [Header("Life stuff")]
     public int maxLife;
@@ -171,19 +172,22 @@ public class Suckable : MonoBehaviour, IDamageable
         _time = Time.time;
     }
 
-    public void InBagEffect()
+    public virtual void InBagEffect()
     {
 
     }
 
     public void Damage(int amount)
     {
-        currentLife -= amount;
-        if (currentLife <= 0)
+        if (!isPowerUp)
         {
-            Destroy(gameObject);
+            currentLife -= amount;
+            if (currentLife <= 0)
+            {
+                Destroy(gameObject);
+            }
+            HandleDamageTaken(amount);
         }
-        HandleDamageTaken(amount);
     }
 
     protected virtual void HandleDamageTaken(int amount)

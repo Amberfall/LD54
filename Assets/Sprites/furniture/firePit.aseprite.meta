@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: firePit
     originalName: 
-    pivot: {x: 0.5, y: -0.33333334}
+    pivot: {x: 0.5, y: -0.23529413}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 30
-      height: 15
+      width: 32
+      height: 17
     spriteID: c510787c64eb5184486fd2e78a23951e
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: firePit
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 5
-        width: 30
-        height: 15
+        x: 0
+        y: 4
+        width: 32
+        height: 17
       spriteId: c510787c64eb5184486fd2e78a23951e
     linkedCells: []
     parentIndex: -1

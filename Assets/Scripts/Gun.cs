@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform _gunTip;
     [SerializeField] private float _timeToShoot = 0.25f;
     private float _time;
+    [SerializeField] private float _suckableShootSpeed = 15;
 
     [SerializeField] private ParticleSystem _ps;
 
@@ -53,10 +54,26 @@ public class Gun : MonoBehaviour
         if (suckables.Count > 0 && Time.time - _time > _timeToShoot)
         {
             Suckable filoSuckable = suckables[suckables.Count - 1];
+            suckables.RemoveAt(suckables.Count - 1);
             filoSuckable.gameObject.SetActive(true);
             filoSuckable.transform.position = _gunTip.position;
-            filoSuckable.Shoot(transform.rotation * Vector2.right * 15);
-            suckables.RemoveAt(suckables.Count - 1);
+
+            // Check For Power Ups
+            int n = CheckForPowerUp(PowerUpType.damage_multiplier);
+            filoSuckable.damage = (n > 0 && !filoSuckable.isPowerUp) ? 3 * n * filoSuckable.baseDamage : filoSuckable.baseDamage;
+
+            filoSuckable.Shoot(transform.rotation * Vector2.right * _suckableShootSpeed);
+
+            n = CheckForPowerUp(PowerUpType.duplicator);
+            if (n > 0 && !filoSuckable.isPowerUp)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    filoSuckable.Shoot(Quaternion.Euler(0, 0, 20 * (n + 1)) * (transform.rotation * Vector2.right) * _suckableShootSpeed);
+                    filoSuckable.Shoot(Quaternion.Euler(0, 0, -20 * (n + 1)) * (transform.rotation * Vector2.right) * _suckableShootSpeed);
+                }
+            }
+
             _time = Time.time;
         }
     }
@@ -85,5 +102,21 @@ public class Gun : MonoBehaviour
             size += suckable.size;
         }
         return size;
+    }
+
+    public int CheckForPowerUp(PowerUpType powerUpType)
+    {
+        int number = 0;
+        foreach (var suckable in suckables)
+        {
+            if (suckable.isPowerUp)
+            {
+                if (suckable.GetComponent<PowerUp>().powerUpType == powerUpType)
+                {
+                    number++;
+                }
+            }
+        }
+        return number;
     }
 }
