@@ -22,6 +22,10 @@ public class Player : MonoBehaviour, IDamageable
     private float _timeWhenDashed;
     private bool _canDash = true;
 
+    [Header("Damage Stuff")]
+    private bool _canBeDamaged = true;
+    [SerializeField] private float _iFrameTime = 1;
+
     [Header("Life stuff")]
     public int maxLife;
     public int currentLife;
@@ -68,13 +72,15 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Damage(int amount)
     {
-        if (!_isDashing)
+        if (_canBeDamaged && !_isDashing)
         {
             currentLife -= amount;
             if (currentLife <= 0)
             {
                 // DIE
+                return;
             }
+            StartCoroutine(CanBeDamagedCoroutine());
             // TODO: Trigger invincibility frames
         }
     }
@@ -95,5 +101,12 @@ public class Player : MonoBehaviour, IDamageable
         _canDash = false;
         yield return new WaitForSeconds(_dashCooldown);
         _canDash = true;
+    }
+
+    private IEnumerator CanBeDamagedCoroutine()
+    {
+        _canBeDamaged = false;
+        yield return new WaitForSeconds(_iFrameTime);
+        _canBeDamaged = true;
     }
 }

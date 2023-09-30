@@ -253,6 +253,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &70298685
 Rigidbody2D:
   serializedVersion: 4
@@ -438,6 +439,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &162062107
 Rigidbody2D:
   serializedVersion: 4
@@ -982,6 +984,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &336566130
 Rigidbody2D:
   serializedVersion: 4
@@ -1261,6 +1264,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!61 &515452321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1591,10 +1595,11 @@ MonoBehaviour:
   _rejectionVelocity: 4
   sprite: {fileID: 0}
   size: 5
-  damage: 0
+  damage: 3
   isUpgrade: 0
   maxLife: 3
   currentLife: 3
+  _yDamagePopupOffset: 4
   movementSpeed: 3
 --- !u!4 &548289171
 Transform:
@@ -2425,6 +2430,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 1
   currentLife: 1
+  _yDamagePopupOffset: 0
 --- !u!50 &1496661050
 Rigidbody2D:
   serializedVersion: 4
@@ -2621,10 +2627,11 @@ MonoBehaviour:
   _rejectionVelocity: 4
   sprite: {fileID: 0}
   size: 5
-  damage: 0
+  damage: 3
   isUpgrade: 0
   maxLife: 3
   currentLife: 3
+  _yDamagePopupOffset: 4
   movementSpeed: 3
 --- !u!61 &1508957941
 BoxCollider2D:
@@ -2853,6 +2860,7 @@ MonoBehaviour:
   isUpgrade: 0
   maxLife: 0
   currentLife: 0
+  _yDamagePopupOffset: 0
 --- !u!1 &1620522073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3483,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2083376485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083376487}
+  - component: {fileID: 2083376486}
+  m_Layer: 0
+  m_Name: Damage Popup Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2083376486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083376485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfb796856fa7574fa05a7d72314955e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePopupPrefab: {fileID: 6614419900245801544, guid: bb9dcbc7a69d5d840b3b46583e1b7737, type: 3}
+--- !u!4 &2083376487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083376485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117430928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,4 +3635,5 @@ SceneRoots:
   - {fileID: 1809598246}
   - {fileID: 1374618985}
   - {fileID: 1676047538}
+  - {fileID: 2083376487}
   - {fileID: 1488689288}
