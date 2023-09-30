@@ -45,7 +45,7 @@ public class Gun : MonoBehaviour
             Suckable filoSuckable = suckables[suckables.Count - 1];
             filoSuckable.gameObject.SetActive(true);
             filoSuckable.transform.position = _gunTip.position;
-            filoSuckable.Shoot((transform.rotation * Vector2.right) * 15);
+            filoSuckable.Shoot(transform.rotation * Vector2.right * 15);
             suckables.RemoveAt(suckables.Count - 1);
             _time = Time.time;
         }
@@ -53,12 +53,7 @@ public class Gun : MonoBehaviour
 
     public bool SuckedRequest(Suckable suckable)
     {
-
         bool canFitInBag = suckable.size + GetSuckablesTotalSize() < maxBagSpace;
-        Debug.Log("===");
-        Debug.Log(suckable.size.ToString());
-        Debug.Log(GetSuckablesTotalSize().ToString());
-        Debug.Log(maxBagSpace.ToString());
         if (canFitInBag)
         {
             suckable.gameObject.SetActive(false);

@@ -21,6 +21,7 @@ public class PlayerInputHandler : MonoBehaviour
         inputMaster.Player.Shoot.performed += OnShootPerformed;
         inputMaster.Player.Suck.performed += OnSuckPerformed;
         inputMaster.Player.Suck.canceled += OnSuckCanceled;
+        inputMaster.Player.Dash.performed += OnDashPerformed;
     }
 
     public void Update()
@@ -41,6 +42,11 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnSuckCanceled(InputAction.CallbackContext context)
     {
         Gun.trigerSuckingEvent.Invoke(false);
+    }
+
+    public void OnDashPerformed(InputAction.CallbackContext context)
+    {
+        Player.dashEvent.Invoke();
     }
 
 }

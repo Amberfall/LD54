@@ -4,7 +4,7 @@ using System.Data;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public class Suckable : MonoBehaviour
+public class Suckable : MonoBehaviour, IDamageable
 {
     public enum SuckableState
     {
@@ -28,14 +28,17 @@ public class Suckable : MonoBehaviour
     public Sprite sprite;
     public int size;
     public int damage;
+    public bool isUpgrade;
 
-
-    private Vector3 _gunTipPosition;
+    [Header("Life stuff")]
+    public int maxLife;
+    public int currentLife;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>().sprite;
+        currentLife = maxLife;
     }
 
     private void Start()
@@ -73,7 +76,8 @@ public class Suckable : MonoBehaviour
     }
     protected virtual void SuckedState()
     {
-        rb.velocity = _suckedVelocity * (Player.instance.transform.position - transform.position).normalized;
+        Vector2 distance = Player.instance.transform.position - transform.position;
+        rb.velocity = _suckedVelocity * (1 + 2 / distance.magnitude) * distance.normalized;
     }
     protected virtual void ShotState()
     {
@@ -90,12 +94,12 @@ public class Suckable : MonoBehaviour
         }
     }
 
-    protected virtual void HandleCollisionWhileShot()
+    protected virtual void HandleCollisionWhileShot(Collision2D other)
     {
         GoToIdleState();
     }
 
-    protected virtual void HandleCollisionWhileRejected()
+    protected virtual void HandleCollisionWhileRejected(Collision2D other)
     {
         GoToIdleState();
     }
@@ -116,10 +120,7 @@ public class Suckable : MonoBehaviour
             {
                 if (!other.GetComponentInParent<Gun>().SuckedRequest(this))
                 {
-                    suckableState = SuckableState.Rejected;
-                    rb.velocity = -rb.velocity.normalized * _rejectionVelocity;
-                    rb.drag = _rejectionFriction;
-                    _time = Time.time;
+                    GoToRejectedState();
                 }
             }
         }
@@ -137,11 +138,11 @@ public class Suckable : MonoBehaviour
     {
         if (suckableState == SuckableState.Shot)
         {
-            HandleCollisionWhileShot();
+            HandleCollisionWhileShot(other);
         }
         else if (suckableState == SuckableState.Rejected)
         {
-            HandleCollisionWhileRejected();
+            HandleCollisionWhileRejected(other);
         }
     }
 
@@ -161,8 +162,25 @@ public class Suckable : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
+    protected virtual void GoToRejectedState()
+    {
+        suckableState = SuckableState.Rejected;
+        rb.velocity = -rb.velocity.normalized * _rejectionVelocity;
+        rb.drag = _rejectionFriction;
+        _time = Time.time;
+    }
+
     public void InBagEffect()
     {
 
+    }
+
+    public void Damage(int amount)
+    {
+        currentLife -= amount;
+        if (currentLife <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

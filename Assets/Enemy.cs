@@ -26,4 +26,16 @@ public class Enemy : Suckable
         }
     }
 
+    protected override void HandleCollisionWhileShot(Collision2D other)
+    {
+        if (other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable))
+        {
+            damageable.Damage(damage);
+            if (other.transform.tag == "Enemy")
+            {
+                Damage(1);
+            }
+        }
+    }
+
 }
