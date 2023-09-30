@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _timeToShoot = 0.25f;
     private float _time;
 
+    [SerializeField] private ParticleSystem _ps;
+
 
     [Header("Bag Stuff")]
     public int maxBagSpace = 10;
@@ -31,6 +33,14 @@ public class Gun : MonoBehaviour
     private void OnSuckEvent(bool isSucking)
     {
         _suckingCollider.enabled = isSucking;
+        if (isSucking)
+        {
+            _ps.Play();
+        }
+        else
+        {
+            _ps.Stop();
+        }
     }
 
     private void OnGUI()
