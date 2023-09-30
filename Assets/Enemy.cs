@@ -38,4 +38,9 @@ public class Enemy : Suckable
         }
     }
 
+    protected override void HandleDamageTaken(int amount)
+    {
+        DamagePopupManager.instance.CreatePopup(transform.position + Vector3.up * _yDamagePopupOffset, amount);
+    }
+
 }

@@ -33,6 +33,7 @@ public class Suckable : MonoBehaviour, IDamageable
     [Header("Life stuff")]
     public int maxLife;
     public int currentLife;
+    [SerializeField] protected float _yDamagePopupOffset;
 
     private void Awake()
     {
@@ -182,5 +183,11 @@ public class Suckable : MonoBehaviour, IDamageable
         {
             Destroy(gameObject);
         }
+        HandleDamageTaken(amount);
+    }
+
+    protected virtual void HandleDamageTaken(int amount)
+    {
+
     }
 }
