@@ -83,7 +83,7 @@ public class Suckable : MonoBehaviour, IDamageable
     }
     protected virtual void ShotState()
     {
-        if (Time.time - _time > _maxShotTime)
+        if (Time.time - _time > _maxShotTime || rb.velocity.magnitude < 0.1f)
         {
             GoToIdleState();
         }
@@ -106,6 +106,10 @@ public class Suckable : MonoBehaviour, IDamageable
         GoToIdleState();
     }
 
+    protected virtual void HandleOnTriggerStay(Collider2D other)
+    {
+
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -126,6 +130,8 @@ public class Suckable : MonoBehaviour, IDamageable
                 }
             }
         }
+
+        HandleOnTriggerStay(other);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -152,8 +158,9 @@ public class Suckable : MonoBehaviour, IDamageable
     {
         suckableState = SuckableState.Shot;
         _time = Time.time;
-        rb.drag = 0;
+        rb.drag = _shotFriction;
         rb.velocity = velocity;
+        HandleShoot();
     }
 
     protected virtual void GoToIdleState()
@@ -191,6 +198,11 @@ public class Suckable : MonoBehaviour, IDamageable
     }
 
     protected virtual void HandleDamageTaken(int amount)
+    {
+
+    }
+
+    protected virtual void HandleShoot()
     {
 
     }

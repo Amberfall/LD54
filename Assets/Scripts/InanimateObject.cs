@@ -13,4 +13,15 @@ public class InanimateObject : Suckable
         Destroy(gameObject);
     }
 
+    protected override void HandleShoot()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Shot");
+    }
+
+    protected override void GoToIdleState()
+    {
+        base.GoToIdleState();
+        gameObject.layer = LayerMask.NameToLayer("Default");
+    }
+
 }

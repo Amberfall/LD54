@@ -174,15 +174,15 @@ MonoBehaviour:
   suckableState: 0
   _idleFriction: 3
   _rejectionFriction: 3
-  _shotFriction: 0
+  _shotFriction: 0.5
   _rejectionTime: 0.5
   _maxShotTime: 100
   _suckedVelocity: 4
   _rejectionVelocity: 4
   sprite: {fileID: 0}
   size: 2
-  baseDamage: 1
-  damage: 1
+  baseDamage: 10
+  damage: 10
   isPowerUp: 0
   maxLife: 1
   currentLife: 1

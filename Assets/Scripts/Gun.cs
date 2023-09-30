@@ -11,9 +11,9 @@ public class Gun : MonoBehaviour
     public static UnityEvent shootEvent = new UnityEvent();
     [SerializeField] private BoxCollider2D _suckingCollider;
     [SerializeField] private Transform _gunTip;
-    [SerializeField] private float _timeToShoot = 0.25f;
+    [SerializeField] private float _timeToShoot = 0.20f;
     private float _time;
-    [SerializeField] private float _suckableShootSpeed = 15;
+    [SerializeField] private float _suckableShootSpeed = 30;
 
     [SerializeField] private ParticleSystem _ps;
 
@@ -64,16 +64,6 @@ public class Gun : MonoBehaviour
 
             filoSuckable.Shoot(transform.rotation * Vector2.right * _suckableShootSpeed);
 
-            n = CheckForPowerUp(PowerUpType.duplicator);
-            if (n > 0 && !filoSuckable.isPowerUp)
-            {
-                for (int i = 0; i < n; i++)
-                {
-                    filoSuckable.Shoot(Quaternion.Euler(0, 0, 20 * (n + 1)) * (transform.rotation * Vector2.right) * _suckableShootSpeed);
-                    filoSuckable.Shoot(Quaternion.Euler(0, 0, -20 * (n + 1)) * (transform.rotation * Vector2.right) * _suckableShootSpeed);
-                }
-            }
-
             _time = Time.time;
         }
     }
@@ -119,4 +109,5 @@ public class Gun : MonoBehaviour
         }
         return number;
     }
+
 }
