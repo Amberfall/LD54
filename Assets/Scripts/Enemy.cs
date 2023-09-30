@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Suckable
+public class Enemy : Suckable, IDamageable
 {
     private Player _player;
     public float movementSpeed;
@@ -17,7 +17,10 @@ public class Enemy : Suckable
 
         if (_player != null)
         {
-            rb.AddForce((_player.transform.position - transform.position).normalized * movementSpeed);
+            //Vector3 target = PlayerBreadCrumbs.instance.GetClosestBreadCrumb(transform.position);
+            Vector3 target = _player.transform.position;
+            rb.AddForce((target - transform.position).normalized * movementSpeed);
+            //rb.AddForce((_player.transform.position - transform.position).normalized * movementSpeed);
             if (rb.velocity.magnitude > movementSpeed)
             {
                 rb.velocity = rb.velocity.normalized * movementSpeed;

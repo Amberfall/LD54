@@ -41,7 +41,7 @@ public class Player : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine(DropBreadCrumbsCoroutine());
     }
 
     // Update is called once per frame
@@ -108,5 +108,15 @@ public class Player : MonoBehaviour, IDamageable
         _canBeDamaged = false;
         yield return new WaitForSeconds(_iFrameTime);
         _canBeDamaged = true;
+    }
+
+    private IEnumerator DropBreadCrumbsCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.25f);
+            PlayerBreadCrumbs.instance.DropBreadCrumb(transform.position);
+        }
+
     }
 }

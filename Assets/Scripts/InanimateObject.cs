@@ -12,4 +12,5 @@ public class InanimateObject : Suckable
         }
         Destroy(gameObject);
     }
+
 }
