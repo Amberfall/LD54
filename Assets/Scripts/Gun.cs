@@ -3,46 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SuckEvent : UnityEvent<bool> { }
+public class TriggerSuckingEvent : UnityEvent<bool> { }
 public class Gun : MonoBehaviour
 {
     public static Gun instance;
-    public static SuckEvent suckEvent = new SuckEvent();
+    public static TriggerSuckingEvent trigerSuckingEvent = new TriggerSuckingEvent();
     public static UnityEvent shootEvent = new UnityEvent();
-    private bool _isSucking;
-    private BoxCollider2D _bc;
-    [SerializeField] private LayerMask _whatIsSuckable;
-    [SerializeField] private float _suckingSpeed;
-    [SerializeField] private Transform _gunCanon;
+    [SerializeField] private BoxCollider2D _suckingCollider;
+    [SerializeField] private Transform _gunTip;
+    [SerializeField] private float _timeToShoot = 0.25f;
+    private float _time;
 
 
-
+    [Header("Bag Stuff")]
     public int maxBagSpace = 10;
-    public int bagSpaceOccupied;
     public List<Suckable> suckables = new List<Suckable>();
 
     private void Awake()
     {
         instance = this;
-        _bc = GetComponent<BoxCollider2D>();
-        suckEvent.AddListener(OnSuckEvent);
+        _suckingCollider = GetComponent<BoxCollider2D>();
+        trigerSuckingEvent.AddListener(OnSuckEvent);
         shootEvent.AddListener(OnShoot);
-    }
-
-    void Start()
-    {
-        bagSpaceOccupied = 0;
-    }
-
-    void Update()
-    {
-
-
+        _time = Time.time;
     }
 
     private void OnSuckEvent(bool isSucking)
     {
-        _bc.enabled = isSucking;
+        _suckingCollider.enabled = isSucking;
     }
 
     private void OnGUI()
@@ -52,13 +40,45 @@ public class Gun : MonoBehaviour
 
     public void OnShoot()
     {
-        if (suckables.Count > 0)
+        if (suckables.Count > 0 && Time.time - _time > _timeToShoot)
         {
-            suckables[suckables.Count - 1].gameObject.SetActive(true);
-            suckables[suckables.Count - 1].transform.position = _gunCanon.position;
-            suckables[suckables.Count - 1].Shoot((transform.rotation * Vector2.right) * 10);
+            Suckable filoSuckable = suckables[suckables.Count - 1];
+            filoSuckable.gameObject.SetActive(true);
+            filoSuckable.transform.position = _gunTip.position;
+            filoSuckable.Shoot((transform.rotation * Vector2.right) * 15);
             suckables.RemoveAt(suckables.Count - 1);
+            _time = Time.time;
         }
     }
 
+    public bool SuckedRequest(Suckable suckable)
+    {
+
+        bool canFitInBag = suckable.size + GetSuckablesTotalSize() < maxBagSpace;
+        Debug.Log("===");
+        Debug.Log(suckable.size.ToString());
+        Debug.Log(GetSuckablesTotalSize().ToString());
+        Debug.Log(maxBagSpace.ToString());
+        if (canFitInBag)
+        {
+            suckable.gameObject.SetActive(false);
+            suckables.Add(suckable);
+        }
+        return canFitInBag;
+    }
+
+    public Vector2 GetGunTipPoisition()
+    {
+        return _gunTip.position;
+    }
+
+    public int GetSuckablesTotalSize()
+    {
+        int size = 0;
+        foreach (Suckable suckable in suckables)
+        {
+            size += suckable.size;
+        }
+        return size;
+    }
 }

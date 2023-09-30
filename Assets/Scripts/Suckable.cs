@@ -1,56 +1,127 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Suckable : MonoBehaviour
 {
+    public enum SuckableState
+    {
+        Idle,
+        Sucked,
+        Shot,
+        Rejected,
+    }
+    protected Rigidbody2D rb;
+    public SuckableState suckableState = SuckableState.Idle;
+    private float _time;
+    [SerializeField] protected float _idleFriction;
+    [SerializeField] protected float _rejectionFriction;
+    [SerializeField] protected float _shotFriction;
+    [SerializeField] protected float _rejectionTime;
+    [SerializeField] protected float _maxShotTime;
+    [SerializeField] protected float _suckedVelocity;
+    [SerializeField] protected float _rejectionVelocity;
+
+    [Header("Suckable Data")]
     public Sprite sprite;
-    public int bagSpace;
+    public int size;
     public int damage;
-    public bool isSucked;
-    public bool isShot;
-    private Vector3 _playerPosition;
-    public Vector2 velocity;
+
+
+    private Vector3 _gunTipPosition;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>().sprite;
+    }
 
     private void Start()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>().sprite;
+        Initialization();
     }
 
     private void Update()
     {
-        if (!isShot)
+        switch (suckableState)
         {
-            // Turn this into a state machine
-            if (isSucked)
-            {
-                GetComponent<Rigidbody2D>().velocity = 4 * (_playerPosition - transform.position).normalized;
-                if ((_playerPosition - transform.position).magnitude < 1f)
-                {
-                    // TODO: Check if enough place in the bag
-                    Gun.instance.suckables.Add(this);
-                    gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            }
+            case SuckableState.Idle:
+                IdleState();
+                break;
+            case SuckableState.Sucked:
+                SuckedState();
+                break;
+            case SuckableState.Shot:
+                ShotState();
+                break;
+            case SuckableState.Rejected:
+                RejectedState();
+                break;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void Initialization()
     {
-        if (other.tag == "Sucker")
+        GoToIdleState();
+    }
+
+    protected virtual void IdleState()
+    {
+
+    }
+    protected virtual void SuckedState()
+    {
+        rb.velocity = _suckedVelocity * (Player.instance.transform.position - transform.position).normalized;
+    }
+    protected virtual void ShotState()
+    {
+        if (Time.time - _time > _maxShotTime)
         {
-            isSucked = true;
+            GoToIdleState();
         }
     }
+    protected virtual void RejectedState()
+    {
+        if (Time.time - _time > _rejectionTime)
+        {
+            GoToIdleState();
+        }
+    }
+
+    protected virtual void HandleCollisionWhileShot()
+    {
+        GoToIdleState();
+    }
+
+    protected virtual void HandleCollisionWhileRejected()
+    {
+        GoToIdleState();
+    }
+
+
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Sucker")
+        if (suckableState == SuckableState.Idle)
         {
-            _playerPosition = other.transform.position;
+            if (other.tag == "Sucker")
+            {
+                suckableState = SuckableState.Sucked;
+            }
+        }
+        else if (suckableState == SuckableState.Sucked)
+        {
+            if (other.tag == "SuckableRange")
+            {
+                if (!other.GetComponentInParent<Gun>().SuckedRequest(this))
+                {
+                    suckableState = SuckableState.Rejected;
+                    rb.velocity = -rb.velocity.normalized * _rejectionVelocity;
+                    rb.drag = _rejectionFriction;
+                    _time = Time.time;
+                }
+            }
         }
     }
 
@@ -58,13 +129,40 @@ public class Suckable : MonoBehaviour
     {
         if (other.tag == "Sucker")
         {
-            isSucked = false;
+            GoToIdleState();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (suckableState == SuckableState.Shot)
+        {
+            HandleCollisionWhileShot();
+        }
+        else if (suckableState == SuckableState.Rejected)
+        {
+            HandleCollisionWhileRejected();
         }
     }
 
     public void Shoot(Vector2 velocity)
     {
-        GetComponent<Rigidbody2D>().velocity = velocity;
-        isShot = true;
+        suckableState = SuckableState.Shot;
+        _time = Time.time;
+        rb.drag = 0;
+        rb.velocity = velocity;
+    }
+
+    protected virtual void GoToIdleState()
+    {
+        suckableState = SuckableState.Idle;
+        _time = Time.time;
+        rb.drag = _idleFriction;
+        rb.velocity = Vector2.zero;
+    }
+
+    public void InBagEffect()
+    {
+
     }
 }
