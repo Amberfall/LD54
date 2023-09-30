@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 50cb13c406212704085a987327ca5167
+guid: 5477a21138aa1294491f57ff108db100
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BGPiecesRough
+  - name: foldingChair
     originalName: 
-    pivot: {x: 0.5, y: -0.1021021}
+    pivot: {x: 0.52, y: -0.11538462}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 728
-      height: 666
-    spriteID: 2ca7b9ee3c7593f4f80fcd0e86babf75
+      width: 25
+      height: 26
+    spriteID: cadf92f4ddd7a9641b3589345c0f7528
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 235728907
-    name: BGPiecesRough
+    guid: 2022299408
+    name: foldingChair
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: BGPiecesRough
+    - name: foldingChair
       frameIndex: 0
       cellRect:
-        x: 36
-        y: 68
-        width: 728
-        height: 666
-      spriteId: 2ca7b9ee3c7593f4f80fcd0e86babf75
+        x: 1
+        y: 3
+        width: 25
+        height: 26
+      spriteId: cadf92f4ddd7a9641b3589345c0f7528
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 800, y: 800}
+  canvasSize: {x: 28, y: 32}
