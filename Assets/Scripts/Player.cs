@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     {
         _rb.velocity = _movementSpeed * _input.movement.normalized;
         // If the player is at the center of the screen
-        gunDirection = _input.mousePosition.normalized;
+        gunDirection = (_input.mousePosition - (Vector2)transform.position).normalized;
         _gun.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, gunDirection));
     }
 }
