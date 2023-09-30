@@ -18,7 +18,7 @@ public class PlayerInputHandler : MonoBehaviour
         inputMaster.Player.Enable();
         inputMaster.Player.Shoot.performed += OnShootPerformed;
         inputMaster.Player.Suck.performed += OnSuckPerformed;
-        inputMaster.Player.Suck.performed += OnSuckPerformed;
+        inputMaster.Player.Suck.canceled += OnSuckCanceled;
     }
 
     public void Update()
@@ -30,9 +30,15 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnShootPerformed(InputAction.CallbackContext context)
     {
+        Gun.shootEvent.Invoke();
     }
     public void OnSuckPerformed(InputAction.CallbackContext context)
     {
+        Gun.suckEvent.Invoke(true);
+    }
+    public void OnSuckCanceled(InputAction.CallbackContext context)
+    {
+        Gun.suckEvent.Invoke(false);
     }
 
 }
