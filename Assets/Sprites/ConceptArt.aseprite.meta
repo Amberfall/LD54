@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: ConceptArt
     originalName: 
-    pivot: {x: 0.5747573, y: -0.07801418}
+    pivot: {x: 0.6760259, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 515
-      height: 282
+      width: 463
+      height: 354
     spriteID: df4916ca1d66dc74c9c07c67c4e6898b
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: ConceptArt
       frameIndex: 0
       cellRect:
-        x: 24
-        y: 22
-        width: 515
-        height: 282
+        x: 7
+        y: 0
+        width: 463
+        height: 354
       spriteId: df4916ca1d66dc74c9c07c67c4e6898b
     linkedCells: []
     parentIndex: -1
