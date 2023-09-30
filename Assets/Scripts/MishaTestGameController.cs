@@ -11,14 +11,18 @@ public class MishaTestGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        suckable1 = Instantiate(prefab) as GameObject;
     }
 
     void add_suckable_1()
     {
+        GameObject succGO = Instantiate(prefab) as GameObject;
+        Suckable succ = succGO.GetComponent<Suckable>();
+
+        succ.size = Random.Range(1, 4);
+
+        bag.GetComponent<BagController>().AddSuckable(succ);
+
         Debug.Log("added suckable 1");
-        bag.GetComponent<BagController>().AddSuckable(suckable1.GetComponent<Suckable>());
     }
 
     // Update is called once per frame

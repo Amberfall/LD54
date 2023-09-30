@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7c8c67aebe7ac2bb064ddc2916312d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bagSize: 5
+  bagSize: 15
   itemTilePrefab: {fileID: 1796832808088739136, guid: 5d894e53cbec00073881e965ff67f0e8, type: 3}
 --- !u!1 &1894099290
 GameObject:

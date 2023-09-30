@@ -98,12 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682c42843dd5ab548beac723d45d6ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suckableState: 0
+  _idleFriction: 0
+  _rejectionFriction: 0
+  _shotFriction: 0
+  _rejectionTime: 0
+  _maxShotTime: 0
+  _suckedVelocity: 0
+  _rejectionVelocity: 0
   sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  bagSpace: 1
+  size: 1
   damage: 5
-  isSucked: 0
-  isShot: 0
-  velocity: {x: 0, y: 0}
 --- !u!50 &-6437476209823619680
 Rigidbody2D:
   serializedVersion: 4
