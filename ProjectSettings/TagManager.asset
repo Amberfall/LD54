@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sucker
+  - SuckableRange
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Shot
   - 
   - 
   - 

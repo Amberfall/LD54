@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    public static PlayerInputHandler instance;
     public InputMaster inputMaster;
     public Vector2 movement;
     public Vector2 mousePosition;
@@ -13,12 +14,14 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         _mainCam = Camera.main;
         inputMaster = new InputMaster();
         inputMaster.Player.Enable();
         inputMaster.Player.Shoot.performed += OnShootPerformed;
         inputMaster.Player.Suck.performed += OnSuckPerformed;
         inputMaster.Player.Suck.canceled += OnSuckCanceled;
+        inputMaster.Player.Dash.performed += OnDashPerformed;
     }
 
     public void Update()
@@ -34,11 +37,16 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void OnSuckPerformed(InputAction.CallbackContext context)
     {
-        Gun.suckEvent.Invoke(true);
+        Gun.trigerSuckingEvent.Invoke(true);
     }
     public void OnSuckCanceled(InputAction.CallbackContext context)
     {
-        Gun.suckEvent.Invoke(false);
+        Gun.trigerSuckingEvent.Invoke(false);
+    }
+
+    public void OnDashPerformed(InputAction.CallbackContext context)
+    {
+        Player.dashEvent.Invoke();
     }
 
 }
