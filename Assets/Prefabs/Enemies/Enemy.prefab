@@ -64,9 +64,11 @@ MonoBehaviour:
   baseDamage: 30
   damage: 30
   isPowerUp: 0
+  suckableType: 1
   maxLife: 100
   currentLife: 100
   _yDamagePopupOffset: 4
+  isDash: 0
   movementSpeed: 3
   _lifebar: {fileID: 0}
 --- !u!50 &525074139067775580

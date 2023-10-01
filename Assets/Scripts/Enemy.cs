@@ -22,6 +22,10 @@ public class Enemy : Suckable, IDamageable
             Vector3 target = _player.transform.position;
             rb.velocity = (_player.transform.position - transform.position).normalized * movementSpeed;
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     protected override void HandleCollisionWhileShot(Collision2D other)

@@ -15,7 +15,7 @@ public class FurnitureManager : MonoBehaviour
 
     private IEnumerator SpawnFurniture()
     {
-        while (true)
+        while (GameManager.instance.isPlayerAlive)
         {
             yield return new WaitForSeconds(_timeBetweenFurnitureSpawn);
             _furnitureSpawnPoint[Random.Range(0, _furnitureSpawnPoint.Length)].SpawnFurnitures();

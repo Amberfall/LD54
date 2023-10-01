@@ -26,17 +26,24 @@ public class ItemTileController : MonoBehaviour
 
         public override State step(float floor_height, ItemTileController tile_controller)
         {
-            if (y_pos < floor_height)
+            if (y_pos > floor_height)
             {
                 SquishingFalling new_state = new SquishingFalling();
 
                 return new_state.step(floor_height, tile_controller);
             }
+            else if (y_pos < floor_height)
+            {
+                y_pos = floor_height;
+            }
 
             squishedness += 5.0f * Time.deltaTime;
             if (squishedness >= 1.0f)
             {
-                return new Settled();
+                State new_state = new Settled();
+                new_state.y_pos = y_pos;
+
+                return new_state;
             }
 
             return this;
@@ -70,7 +77,7 @@ public class ItemTileController : MonoBehaviour
             float squish_factor;
             float squish_unsquish;
 
-            if (y_pos >= floor_height)
+            if (y_pos <= floor_height)
             {
                 Squishing new_state = new Squishing();
                 // Do the opposite math here to make sure it resquishes as it lands
@@ -86,6 +93,10 @@ public class ItemTileController : MonoBehaviour
 
                 return new_state.step(floor_height, tile_controller);
             }
+            // else if (y_pos < floor_height)
+            // {
+            //     y_pos = floor_height;
+            // }
 
             // Do some weird math here to make sure it is unsquishing as it falls
             to_be_squared = (squishedness - 1);
@@ -108,6 +119,7 @@ public class ItemTileController : MonoBehaviour
                 Falling new_state = new Falling();
 
                 new_state.y_vel = y_vel;
+                new_state.y_pos = y_pos;
 
                 return new_state;
             }
@@ -230,6 +242,10 @@ public class ItemTileController : MonoBehaviour
                 new_state.y_pos = y_pos;
                 return new_state;
             }
+            else if (floor_height > y_pos)
+            {
+                y_pos = floor_height;
+            }
             return this;
         }
 
@@ -298,6 +314,11 @@ public class ItemTileController : MonoBehaviour
     public float get_y_size(int bag_size)
     {
         return get_nominal_y_size(bag_size) * this.state.Height();
+    }
+
+    public float get_top_pos(int bag_size)
+    {
+        return this.state.y_pos + get_y_size(bag_size);
     }
 
     public void SetPosition(float y_min, float nominal_y_size)

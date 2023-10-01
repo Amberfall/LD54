@@ -208,9 +208,11 @@ MonoBehaviour:
   baseDamage: 0
   damage: 0
   isPowerUp: 1
+  suckableType: 2
   maxLife: 0
   currentLife: 0
   _yDamagePopupOffset: 0
+  isDash: 0
   powerUpType: 0
   _sp: {fileID: 9111775647259026213}
 --- !u!114 &372857897365795234

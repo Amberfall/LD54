@@ -13,6 +13,12 @@ public class Suckable : MonoBehaviour, IDamageable
         Shot,
         Rejected,
     }
+    public enum SuckableType
+    {
+        furniture,
+        enemy,
+        powerup,
+    }
     protected Rigidbody2D rb;
     public SuckableState suckableState = SuckableState.Idle;
     protected float _time;
@@ -30,6 +36,7 @@ public class Suckable : MonoBehaviour, IDamageable
     public int baseDamage;
     public int damage;
     public bool isPowerUp;
+    public SuckableType suckableType;
 
     [Header("Life stuff")]
     public int maxLife;
@@ -79,8 +86,15 @@ public class Suckable : MonoBehaviour, IDamageable
     }
     protected virtual void SuckedState()
     {
-        Vector2 distance = Player.instance.transform.position - transform.position;
-        rb.velocity = _suckedVelocity * (1 + 2 / distance.magnitude) * distance.normalized;
+        if (Player.instance != null)
+        {
+            Vector2 distance = Player.instance.transform.position - transform.position;
+            rb.velocity = _suckedVelocity * (1 + 2 / distance.magnitude) * distance.normalized;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
     protected virtual void ShotState()
     {
