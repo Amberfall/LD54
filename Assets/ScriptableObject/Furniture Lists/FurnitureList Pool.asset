@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b7cc5f703edc34d99abb5fe4c17d75, type: 3}
+  m_Name: FurnitureList Pool
+  m_EditorClassIdentifier: 
+  spawnRadius: 0
+  furnitures:
+  - {fileID: 2466036535199730417, guid: cb8a9bab791913c48be7311fbffd5bdf, type: 3}
+  - {fileID: 2447324713220874493, guid: 4d570d362446c8f46a062d6c8b26a48a, type: 3}
+  - {fileID: 484412345472523948, guid: eb1909dd836f92542b836410fd3d59e2, type: 3}
