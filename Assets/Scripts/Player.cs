@@ -56,7 +56,10 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (!_isDashing)
         {
-            _rb.velocity = _movementSpeed * _input.movement.normalized;
+            int n = Gun.instance.CheckForPowerUp(PowerUpType.movement);
+            if (n > 3)
+                n = 2;
+            _rb.velocity = _movementSpeed * _input.movement.normalized * (1 + n * 0.5f);
             // _rb.AddForce(_movementSpeed * _input.movement.normalized * 600);
             // if (_rb.velocity.magnitude > _movementSpeed)
             // {
@@ -101,7 +104,9 @@ public class Player : MonoBehaviour, IDamageable
             // Check for reduced damage power up
             CameraController.instance.CameraShake(0.3f, 2.5f);
             int n = Gun.instance.CheckForPowerUp(PowerUpType.defensive);
-            currentLife -= (int)((float)amount / (n + 1));
+            if (n > 3)
+                n = 3;
+            currentLife -= (int)((float)amount * (1 - n * 0.3f));
             if (currentLife <= 0)
             {
                 currentLife = 0;

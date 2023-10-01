@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _powerUps:
-  - {fileID: 3403461037932601571, guid: e5f87219727760d44957c12295c496fd, type: 3}
+  - {fileID: 6365356630058982476, guid: 77414f66bc2296b4ba251a107c30af16, type: 3}
+  - {fileID: 458764519267587826, guid: 6e4842ec3727f1749bcac7adf7745d32, type: 3}
+  - {fileID: 2779381770376579510, guid: 131a34d0ac3f4a340ae80489d24443c9, type: 3}
   totalEnemyKilled: 0
-  _enemyToKillForNextPowerUp: 10
+  _enemyToKillForNextPowerUp: 5

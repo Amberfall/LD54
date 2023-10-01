@@ -6,6 +6,7 @@ public enum PowerUpType
 {
     damage_multiplier,
     defensive,
+    movement,
 }
 
 public class PowerUp : Suckable

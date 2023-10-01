@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -368,5 +369,9 @@ public class ItemTileController : MonoBehaviour
     public void SetSprite(Suckable.SuckableType suckableType)
     {
         child_tile.GetComponent<Image>().sprite = sprites[(int)suckableType];
+    }
+    public void SetText(string text)
+    {
+        child_text.GetComponent<TextMeshProUGUI>().text = text;
     }
 }

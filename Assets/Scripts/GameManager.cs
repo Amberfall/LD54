@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator PlayerDiedCoroutine(Vector3 position)
     {
+        AudioManager.Instance.StopVacuum();
         AudioManager.Instance.StopMusic();
         _deathScreen.gameObject.SetActive(true);
         _deathScreen.transform.position = position;
