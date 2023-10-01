@@ -9,6 +9,5 @@ public class Lifebar : MonoBehaviour
     public void SetLife(float ratio)
     {
         _currentLifeTransform.localScale = new Vector3(ratio, 1, 1);
-        Debug.Log(ratio);
     }
 }
