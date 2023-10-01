@@ -49,7 +49,6 @@ public class Enemy : Suckable, IDamageable
         if (other.tag == "Player" && suckableState == SuckableState.Idle)
         {
             other.GetComponent<IDamageable>().Damage(damage);
-            Debug.Log("!!");
         }
     }
 

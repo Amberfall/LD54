@@ -83,7 +83,7 @@ public class Suckable : MonoBehaviour, IDamageable
     }
     protected virtual void ShotState()
     {
-        if (Time.time - _time > _maxShotTime || rb.velocity.magnitude < 0.1f)
+        if (Time.time - _time > _maxShotTime || rb.velocity.magnitude < 0.5f)
         {
             GoToIdleState();
         }
