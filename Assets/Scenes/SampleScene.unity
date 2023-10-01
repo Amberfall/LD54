@@ -576,7 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _suckingCollider: {fileID: 0}
   _gunTip: {fileID: 1518747621}
-  _timeToShoot: 0.25
+  _timeToShoot: 0.15
   _suckableShootSpeed: 15
   _ps: {fileID: 1725602088}
   maxBagSpace: 10
@@ -1181,7 +1181,7 @@ Transform:
   m_GameObject: {fileID: 1209193152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.7, y: 8.61, z: 0}
+  m_LocalPosition: {x: 23.35, y: 8.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1230,7 +1230,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 50}
+  m_Size: {x: 20.3, y: 50}
   m_EdgeRadius: 0
 --- !u!50 &1209193155
 Rigidbody2D:
@@ -1412,7 +1412,7 @@ Transform:
   m_GameObject: {fileID: 1359585407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.47, y: 9.72, z: 0}
+  m_LocalPosition: {x: -44.76, y: 9.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1461,7 +1461,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 50}
+  m_Size: {x: 28, y: 50}
   m_EdgeRadius: 0
 --- !u!50 &1359585410
 Rigidbody2D:
@@ -1743,7 +1743,7 @@ Transform:
   m_GameObject: {fileID: 1490772200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.17, y: -13.05, z: 0}
+  m_LocalPosition: {x: -9.17, y: -19.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1792,7 +1792,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 50, y: 13.38}
   m_EdgeRadius: 0
 --- !u!50 &1490772203
 Rigidbody2D:
@@ -8103,7 +8103,7 @@ Transform:
   m_GameObject: {fileID: 1891106737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.17, y: 24.58, z: 0}
+  m_LocalPosition: {x: -9.17, y: 32.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8152,7 +8152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 50, y: 16.8}
   m_EdgeRadius: 0
 --- !u!50 &1891106740
 Rigidbody2D:
@@ -8968,6 +8968,10 @@ PrefabInstance:
     - target: {fileID: 3567638409982928821, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512154490082596241, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
+      propertyPath: _timeBetweenFurnitureSpawn
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7610799420559029837, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
       propertyPath: m_Name
