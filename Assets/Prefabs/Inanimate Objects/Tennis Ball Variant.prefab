@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: baseDamage
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2549965750574789776, guid: ad129a22e1c63cd459bacecec4e7157c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1174767395, guid: a2abf7cbf7df2d946a726f9d825d090d, type: 3}
     - target: {fileID: 5957944283076507044, guid: ad129a22e1c63cd459bacecec4e7157c, type: 3}
       propertyPath: m_Size.x
       value: 0.5841913
@@ -80,6 +84,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1174767395, guid: a2abf7cbf7df2d946a726f9d825d090d, type: 3}
+    - target: {fileID: 7680016726183734159, guid: ad129a22e1c63cd459bacecec4e7157c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680016726183734159, guid: ad129a22e1c63cd459bacecec4e7157c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 7680016726183734159, guid: ad129a22e1c63cd459bacecec4e7157c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: baseDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7374394666869002848, guid: 4d570d362446c8f46a062d6c8b26a48a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de4c20c80a03c9e4f9ed6ca0a977e1a4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8280569857229225981, guid: 4d570d362446c8f46a062d6c8b26a48a, type: 3}
@@ -132,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 395511853074796080, guid: 5ecd1888b978c264e8e881c756d93d88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.378
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 395511853074796080, guid: 5ecd1888b978c264e8e881c756d93d88, type: 3}
       propertyPath: m_LocalPosition.z

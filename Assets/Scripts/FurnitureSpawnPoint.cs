@@ -29,7 +29,8 @@ public class FurnitureSpawnPoint : MonoBehaviour
         _bubbleSpawnTransform.gameObject.SetActive(false);
         while (dropPositions.Count > 0)
         {
-            Instantiate(_furnitureList.furnitures[Random.Range(0, _furnitureList.furnitures.Length)], dropPositions[0].transform.position, Quaternion.identity);
+            var f = Instantiate(_furnitureList.furnitures[Random.Range(0, _furnitureList.furnitures.Length)], dropPositions[0].transform.position, Quaternion.identity);
+            f.GetComponent<InanimateObject>().PlayAnimation();
             var go = dropPositions[0];
             dropPositions.RemoveAt(0);
             Destroy(go);

@@ -29,4 +29,9 @@ public class InanimateObject : Suckable
         gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
+    public void PlayAnimation()
+    {
+        GetComponentInChildren<Animator>().Play("Furniture");
+    }
+
 }
