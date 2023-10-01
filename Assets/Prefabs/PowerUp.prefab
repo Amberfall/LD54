@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5973409894742884321}
   - component: {fileID: 9111775647259026213}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: PowerUp Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.13646817, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d85036342798402479a7aad4755815b4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,7 +180,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3403461037932601571
 MonoBehaviour:
   m_ObjectHideFlags: 0
