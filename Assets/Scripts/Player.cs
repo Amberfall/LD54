@@ -59,6 +59,14 @@ public class Player : MonoBehaviour, IDamageable
             // {
             //     _rb.velocity = _rb.velocity.normalized * _movementSpeed;
             // }
+            if (_rb.velocity.magnitude > 0)
+            {
+                AudioManager.Instance.PlayFootstep();
+            }
+            else
+            {
+                AudioManager.Instance.StopFootstep();
+            }
         }
         else
         {

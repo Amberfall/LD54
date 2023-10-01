@@ -38,10 +38,12 @@ public class Gun : MonoBehaviour
         if (isSucking)
         {
             _ps.Play();
+            AudioManager.Instance.PlayVacuum();
         }
         else
         {
             _ps.Stop();
+            AudioManager.Instance.StopVacuum();
         }
     }
 
