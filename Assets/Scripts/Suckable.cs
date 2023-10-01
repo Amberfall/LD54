@@ -15,7 +15,7 @@ public class Suckable : MonoBehaviour, IDamageable
     }
     protected Rigidbody2D rb;
     public SuckableState suckableState = SuckableState.Idle;
-    private float _time;
+    protected float _time;
     [SerializeField] protected float _idleFriction;
     [SerializeField] protected float _rejectionFriction;
     [SerializeField] protected float _shotFriction;
@@ -191,6 +191,7 @@ public class Suckable : MonoBehaviour, IDamageable
             currentLife -= amount;
             if (currentLife <= 0)
             {
+                HandleDeath();
                 Destroy(gameObject);
             }
             HandleDamageTaken(amount);
@@ -198,6 +199,11 @@ public class Suckable : MonoBehaviour, IDamageable
     }
 
     protected virtual void HandleDamageTaken(int amount)
+    {
+
+    }
+
+    protected virtual void HandleDeath()
     {
 
     }

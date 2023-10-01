@@ -98,10 +98,14 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (_canDash)
         {
-            _isDashing = true;
-            _rb.velocity = _input.movement.normalized * _dashSpeed;
-            _timeWhenDashed = Time.time;
-            StartCoroutine(DashCooldownCoroutine());
+            Vector2 direction = _input.movement.normalized;
+            if (Gun.instance.TryToShootEnemyToDash(direction))
+            {
+                _isDashing = true;
+                _rb.velocity = direction * _dashSpeed;
+                _timeWhenDashed = Time.time;
+                StartCoroutine(DashCooldownCoroutine());
+            }
         }
     }
 
@@ -118,14 +122,4 @@ public class Player : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(_iFrameTime);
         _canBeDamaged = true;
     }
-
-    // private IEnumerator DropBreadCrumbsCoroutine()
-    // {
-    //     while (true)
-    //     {
-    //         yield return new WaitForSeconds(0.25f);
-    //         PlayerBreadCrumbs.instance.DropBreadCrumb(transform.position);
-    //     }
-
-    // }
 }
