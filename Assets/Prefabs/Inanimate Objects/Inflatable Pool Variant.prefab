@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &835037909394048690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2237936054014405547, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7665248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237936054014405547, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3759356
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237936054014405547, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.056215525
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237936054014405547, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.045036793
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237936054014405547, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690758398718438653, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1545140720, guid: a2abf7cbf7df2d946a726f9d825d090d, type: 3}
+    - target: {fileID: 2825031008296121728, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825031008296121728, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825031008296121728, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982108984463775746, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_Name
+      value: Inflatable Pool Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.166208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.578986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516343536647251272, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138595438380953893, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
+      propertyPath: baseDamage
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35e7a1422be9969488eb6b7c738c1199, type: 3}
