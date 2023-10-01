@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource _musicAudioSource;
     private AudioSource _footstepAudioSource;
     private AudioSource _vacuumNoiseAudioSource;
+    private AudioSource _gameOverAudioSource;
 
     private static AudioManager _instance;
 
@@ -42,6 +43,9 @@ public class AudioManager : MonoBehaviour
 
         _vacuumNoiseAudioSource = _instance.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
         _vacuumNoiseAudioSource.clip = sfxDatabase[Sfx.VacuumNoise];
+
+        _gameOverAudioSource = _instance.transform.GetChild(2).gameObject.GetComponent<AudioSource>();
+        _gameOverAudioSource.clip = sfxDatabase[Sfx.GameOver];
 
         // This should be changed once there are multiple scenes
         PlayMusic(Music.Level);
@@ -86,6 +90,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopFootstep()
+    {
+        _footstepAudioSource.Stop();
+    }
+
     public void PlayVacuum()
     {
         if (!_vacuumNoiseAudioSource.isPlaying)
@@ -94,13 +103,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayDeathSfx()
+    public void StopVacuum()
     {
-        AudioSource.PlayClipAtPoint(sfxDatabase[Sfx.PlayerKilled], new Vector3(0, 0, 0));
+        _vacuumNoiseAudioSource.Stop();
     }
+
     public void PlayGameOverSfx()
     {
-        AudioSource.PlayClipAtPoint(sfxDatabase[Sfx.GameOver], new Vector3(0, 0, 0));
+        if (!_gameOverAudioSource.isPlaying)
+        {
+            _gameOverAudioSource.Play();
+        }
     }
 
     public void PlaySfx(AudioManager.Sfx sfx)
