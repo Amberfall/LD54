@@ -88,7 +88,8 @@ public class Player : MonoBehaviour, IDamageable
             currentLife -= (int)((float)amount / (n + 1));
             if (currentLife <= 0)
             {
-                // DIE
+                GameManager.instance.PlayerDied(transform.position);
+                Destroy(gameObject);
                 return;
             }
             StartCoroutine(CanBeDamagedCoroutine());

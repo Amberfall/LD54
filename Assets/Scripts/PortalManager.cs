@@ -22,23 +22,26 @@ public class PortalManager : MonoBehaviour
 
     public void SpawnNextWave()
     {
-        if (currentWave < _portalWaves.Length)
+        if (GameManager.instance.isPlayerAlive)
         {
-            ResetSpawnPoints();
-            int portalNumber = _portalWaves[currentWave].spawnPortals.Length;
-            while (portalNumber > 0)
+            if (currentWave < _portalWaves.Length)
             {
-                int rnd = Random.Range(0, _spawnPoints.Length);
-                if (!_spawnPoints[rnd].busy)
+                ResetSpawnPoints();
+                int portalNumber = _portalWaves[currentWave].spawnPortals.Length;
+                while (portalNumber > 0)
                 {
-                    Instantiate(_portalWaves[currentWave].spawnPortals[portalNumber - 1], _spawnPoints[rnd].transform.position, Quaternion.identity);
-                    _spawnPoints[rnd].busy = true;
-                    portalNumber--;
-                    AudioManager.Instance.PlaySfx(AudioManager.Sfx.PortalSpawn);
+                    int rnd = Random.Range(0, _spawnPoints.Length);
+                    if (!_spawnPoints[rnd].busy)
+                    {
+                        Instantiate(_portalWaves[currentWave].spawnPortals[portalNumber - 1], _spawnPoints[rnd].transform.position, Quaternion.identity);
+                        _spawnPoints[rnd].busy = true;
+                        portalNumber--;
+                        AudioManager.Instance.PlaySfx(AudioManager.Sfx.PortalSpawn);
+                    }
                 }
             }
+            currentWave++;
         }
-        currentWave++;
     }
 
     private void ResetSpawnPoints()
