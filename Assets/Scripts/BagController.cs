@@ -75,20 +75,15 @@ public class BagController : MonoBehaviour
         {
             ItemTileController tile_controller = tiles[i].GetComponent<ItemTileController>();
 
-            float bottom_pos = tile_controller.state.y_pos;
-            if (bottom_pos < last_top_pos)
-            {
-                // Set the rect transform to be at 0
-                tile_controller.state.y_pos = last_top_pos;
-                bottom_pos = last_top_pos;
-            }
+            // tile_controller.state.y_pos = Mathf.Max(bottom_pos, last_top_pos);
 
-            bool falling = bottom_pos > last_top_pos || last_falling;
+            // bool falling = bottom_pos > last_top_pos || last_falling;
 
             tile_controller.update_state(last_top_pos);
 
-            last_top_pos = bottom_pos + tile_controller.get_y_size(gun_instance.maxBagSpace);
             tile_controller.update_position(gun_instance.maxBagSpace, tile_x_pos, tile_x_width);
+
+            last_top_pos = tile_controller.get_top_pos(gun_instance.maxBagSpace); // bottom_pos + tile_controller.get_y_size();
             // tile_controller.was_falling = falling;
         }
     }
