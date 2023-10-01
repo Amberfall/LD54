@@ -99,7 +99,7 @@ public class Player : MonoBehaviour, IDamageable
         if (_canDash)
         {
             Vector2 direction = _input.movement.normalized;
-            if (Gun.instance.TryToShootEnemyToDash(direction))
+            if (direction != Vector2.zero && Gun.instance.TryToShootEnemyToDash(direction))
             {
                 _isDashing = true;
                 _rb.velocity = direction * _dashSpeed;
