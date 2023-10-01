@@ -15,6 +15,8 @@ public class BagController : MonoBehaviour
 
     int suckables_size = 0;
 
+    private Suckable bottom_suck = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,16 +47,18 @@ public class BagController : MonoBehaviour
         PositionTiles();
     }
 
-    public void Eject()
+    public void Eject(int index, bool up)
     {
+        if (index == -1)
+            index = tiles.Count - 1;
         if (tiles.Count == 0)
             return;
 
-        GameObject tile = tiles[tiles.Count - 1];
-        tiles.RemoveAt(tiles.Count - 1);
+        GameObject tile = tiles[index];
+        tiles.RemoveAt(index);
 
         tiles_heading_out.Add(tile);
-        tile.GetComponent<ItemTileController>().Eject();
+        tile.GetComponent<ItemTileController>().Eject(up);
 
         PositionTiles();
     }
@@ -92,19 +96,30 @@ public class BagController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (gun_instance.suckables.Count > suckables_size)
         {
             for (int i = suckables_size; i < gun_instance.suckables.Count; i++)
             {
                 AddSuckable(gun_instance.suckables[i]);
             }
+
+            bottom_suck = gun_instance.suckables[0];
         }
 
         if (gun_instance.suckables.Count < suckables_size)
         {
-            for (int i = suckables_size - 1; i >= gun_instance.suckables.Count; i--)
+            if (gun_instance.suckables.Count == 0 || bottom_suck == gun_instance.suckables[0])
             {
-                Eject();
+                Eject(-1, true);
+            }
+            else
+            {
+                Eject(0, false);
+                if (gun_instance.suckables.Count > 0)
+                    bottom_suck = gun_instance.suckables[0];
+                else
+                    bottom_suck = null;
             }
         }
 
