@@ -46,8 +46,11 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         time = 0;
+        AudioManager.Instance.PlayDeathSfx();
         while (time < 1)
         {
+            if (time > 1)
+                time = 1;
             _cameraTarget.position = Vector3.Lerp(_deathScreen.transform.position, Vector3.zero, time);
             _deathScreen.SetScale(3 * time + 1);
             time += Time.deltaTime;

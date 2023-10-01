@@ -93,6 +93,10 @@ public class Player : MonoBehaviour, IDamageable
                 Destroy(gameObject);
                 return;
             }
+            else
+            {
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerDamaged);
+            }
             StartCoroutine(CanBeDamagedCoroutine());
             // TODO: Trigger invincibility frames
         }

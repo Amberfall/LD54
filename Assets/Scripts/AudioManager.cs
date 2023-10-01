@@ -66,6 +66,11 @@ public class AudioManager : MonoBehaviour
         _musicAudioSource.Stop();
     }
 
+    public void PlayDeathSfx()
+    {
+        AudioSource.PlayClipAtPoint(sfxDatabase[Sfx.PlayerKilled], new Vector3(0, 0, 0));
+    }
+
     public void PlaySfx(AudioManager.Sfx sfx)
     {
         if (GameManager.instance.isPlayerAlive)
