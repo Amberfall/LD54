@@ -295,8 +295,11 @@ public class ItemTileController : MonoBehaviour
         rectTransform.anchorMin = new Vector2(0, state.y_pos);
         rectTransform.anchorMax = new Vector2(1, state.y_pos + get_nominal_y_size(bagSize));
 
-        child_rect_transform.anchorMin = new Vector2(x_min, 0.01f);
-        child_rect_transform.anchorMax = new Vector2(x_max, this.state.Height() - 0.01f);
+        child_rect_transform.anchorMin = new Vector2(x_min, 0.0f);
+        child_rect_transform.anchorMax = new Vector2(x_max, this.state.Height());
+
+        child_rect_transform.offsetMin = new Vector2(0.0f, 10.0f);
+        child_rect_transform.offsetMax = new Vector2(0.0f, -10.0f);
     }
 
     // Update is called once per frame
