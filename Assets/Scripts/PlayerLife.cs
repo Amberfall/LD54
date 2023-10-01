@@ -16,6 +16,9 @@ public class PlayerLife : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _textMeshProUGUI.text = _player.currentLife.ToString() + "/" + _player.maxLife.ToString();
+        if (Player.instance != null)
+        {
+            _textMeshProUGUI.text = _player.currentLife.ToString() + "/" + _player.maxLife.ToString();
+        }
     }
 }

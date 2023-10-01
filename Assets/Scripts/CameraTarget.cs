@@ -17,11 +17,14 @@ public class CameraTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 averagePosition = (Vector3)PlayerInputHandler.instance.mousePosition - _playerTransform.position;
-        if (averagePosition.magnitude > _maxDistanceFromPlayer)
+        if (Player.instance != null)
         {
-            averagePosition = averagePosition.normalized * _maxDistanceFromPlayer;
+            Vector3 averagePosition = (Vector3)PlayerInputHandler.instance.mousePosition - _playerTransform.position;
+            if (averagePosition.magnitude > _maxDistanceFromPlayer)
+            {
+                averagePosition = averagePosition.normalized * _maxDistanceFromPlayer;
+            }
+            transform.position = _playerTransform.position + averagePosition + _cameraOffset;
         }
-        transform.position = _playerTransform.position + averagePosition + _cameraOffset;
     }
 }

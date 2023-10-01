@@ -25,7 +25,6 @@ public class FurnitureSpawnPoint : MonoBehaviour
             dropPositions.Add(go);
         }
         yield return new WaitForSeconds(2.5f);
-        Debug.Log(furnitureNumber);
         while (dropPositions.Count > 0)
         {
             Instantiate(_furnitureList.furnitures[Random.Range(0, _furnitureList.furnitures.Length)], dropPositions[0].transform.position, Quaternion.identity);

@@ -19,11 +19,13 @@ public class AudioManager : MonoBehaviour
 
     private static AudioManager _instance;
 
-    public static AudioManager Instance {
+    public static AudioManager Instance
+    {
         get { return _instance; }
     }
 
-    private void Awake() {
+    private void Awake()
+    {
         DontDestroyOnLoad(transform.gameObject);
         _instance = this;
 
@@ -38,7 +40,8 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    private void MapAudioClipsToEnums() {
+    private void MapAudioClipsToEnums()
+    {
         musicDatabase.Add(Music.Menu, musicClips[0]);
         musicDatabase.Add(Music.Level, musicClips[1]);
         musicDatabase.Add(Music.Death, musicClips[2]);
@@ -52,13 +55,23 @@ public class AudioManager : MonoBehaviour
         sfxDatabase.Add(Sfx.VacuumSuck, sfxClips[6]);
     }
 
-    public void PlayMusic(AudioManager.Music music) {
+    public void PlayMusic(AudioManager.Music music)
+    {
         _musicAudioSource.clip = musicDatabase[music];
         _musicAudioSource.Play();
     }
 
-    public void PlaySfx(AudioManager.Sfx sfx) {
-        AudioSource.PlayClipAtPoint(sfxDatabase[sfx], new Vector3(0,0,0));
+    public void StopMusic()
+    {
+        _musicAudioSource.Stop();
+    }
+
+    public void PlaySfx(AudioManager.Sfx sfx)
+    {
+        if (GameManager.instance.isPlayerAlive)
+        {
+            AudioSource.PlayClipAtPoint(sfxDatabase[sfx], new Vector3(0, 0, 0));
+        }
     }
 
 }

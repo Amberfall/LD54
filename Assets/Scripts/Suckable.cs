@@ -79,8 +79,15 @@ public class Suckable : MonoBehaviour, IDamageable
     }
     protected virtual void SuckedState()
     {
-        Vector2 distance = Player.instance.transform.position - transform.position;
-        rb.velocity = _suckedVelocity * (1 + 2 / distance.magnitude) * distance.normalized;
+        if (Player.instance != null)
+        {
+            Vector2 distance = Player.instance.transform.position - transform.position;
+            rb.velocity = _suckedVelocity * (1 + 2 / distance.magnitude) * distance.normalized;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
     protected virtual void ShotState()
     {
