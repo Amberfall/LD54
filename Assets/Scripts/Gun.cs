@@ -65,6 +65,8 @@ public class Gun : MonoBehaviour
             filoSuckable.Shoot(transform.rotation * Vector2.right * _suckableShootSpeed);
 
             _time = Time.time;
+
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerShoot);
         }
     }
 
@@ -75,6 +77,7 @@ public class Gun : MonoBehaviour
         {
             suckable.gameObject.SetActive(false);
             suckables.Add(suckable);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.VacuumSuck);
         }
         return canFitInBag;
     }
