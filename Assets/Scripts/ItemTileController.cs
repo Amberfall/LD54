@@ -263,10 +263,10 @@ public class ItemTileController : MonoBehaviour
     public void Eject(bool up)
     {
         State new_state;
-        if (up)
-            new_state = new SquishingRising();
-        else
+        if (suckable.isDash)
             new_state = new SquishingPooping();
+        else
+            new_state = new SquishingRising();
 
         new_state.y_pos = this.state.y_pos;
         this.state = new_state;
