@@ -78,24 +78,37 @@ public class AudioManager : MonoBehaviour
         _musicAudioSource.Stop();
     }
 
-    public void PlayFootstep() {
-        if(!_footstepAudioSource.isPlaying) {
+    public void PlayFootstep()
+    {
+        if (!_footstepAudioSource.isPlaying)
+        {
             _footstepAudioSource.Play();
         }
     }
 
-    public void PlayVacuum() {
-        if(!_vacuumNoiseAudioSource.isPlaying) {
+    public void PlayVacuum()
+    {
+        if (!_vacuumNoiseAudioSource.isPlaying)
+        {
             _vacuumNoiseAudioSource.Play();
         }
     }
 
+    public void PlayDeathSfx()
+    {
+        AudioSource.PlayClipAtPoint(sfxDatabase[Sfx.PlayerKilled], new Vector3(0, 0, 0));
+    }
+    public void PlayGameOverSfx()
+    {
+        AudioSource.PlayClipAtPoint(sfxDatabase[Sfx.GameOver], new Vector3(0, 0, 0));
+    }
+
     public void PlaySfx(AudioManager.Sfx sfx)
     {
-        //if (GameManager.instance.isPlayerAlive)
-        //{
+        if (GameManager.instance.isPlayerAlive)
+        {
             AudioSource.PlayClipAtPoint(sfxDatabase[sfx], new Vector3(0, 0, 0));
-        //}
+        }
     }
 
 }
