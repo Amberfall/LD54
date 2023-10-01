@@ -6,6 +6,8 @@ public class ItemTileController : MonoBehaviour
 {
 
     public GameObject child_tile;
+    public GameObject child_sprite;
+    public GameObject child_text;
 
     public abstract class State
     {
@@ -245,6 +247,8 @@ public class ItemTileController : MonoBehaviour
     {
         this.suckable = suckable;
         this.state.y_pos = y_pos;
+
+        child_sprite.GetComponent<SpriteRenderer>().sprite = suckable.sprite;
     }
 
     public void Squish()
@@ -291,8 +295,11 @@ public class ItemTileController : MonoBehaviour
         rectTransform.anchorMin = new Vector2(0, state.y_pos);
         rectTransform.anchorMax = new Vector2(1, state.y_pos + get_nominal_y_size(bagSize));
 
-        child_rect_transform.anchorMin = new Vector2(x_min, 0.01f);
-        child_rect_transform.anchorMax = new Vector2(x_max, this.state.Height() - 0.01f);
+        child_rect_transform.anchorMin = new Vector2(x_min, 0.0f);
+        child_rect_transform.anchorMax = new Vector2(x_max, this.state.Height());
+
+        child_rect_transform.offsetMin = new Vector2(0.0f, 10.0f);
+        child_rect_transform.offsetMax = new Vector2(0.0f, -10.0f);
     }
 
     // Update is called once per frame

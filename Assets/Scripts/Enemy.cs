@@ -21,13 +21,13 @@ public class Enemy : Suckable, IDamageable
         {
             //Vector3 target = PlayerBreadCrumbs.instance.GetClosestBreadCrumb(transform.position);
             Vector3 target = _player.transform.position;
-            rb.AddForce((target - transform.position).normalized * movementSpeed);
-            //rb.AddForce((_player.transform.position - transform.position).normalized * movementSpeed);
-            if (rb.velocity.magnitude > movementSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * movementSpeed;
-            }
-            //rb.velocity = (_player.transform.position - transform.position).normalized * movementSpeed;
+            // rb.AddForce((target - transform.position).normalized * movementSpeed);
+            // //rb.AddForce((_player.transform.position - transform.position).normalized * movementSpeed);
+            // if (rb.velocity.magnitude > movementSpeed)
+            // {
+            //     rb.velocity = rb.velocity.normalized * movementSpeed;
+            // }
+            rb.velocity = (_player.transform.position - transform.position).normalized * movementSpeed;
         }
     }
 
@@ -39,7 +39,7 @@ public class Enemy : Suckable, IDamageable
             if (other.transform.tag == "Enemy")
             {
                 // Self damage
-                Damage(5);
+                Damage(damage / 2);
             }
         }
     }

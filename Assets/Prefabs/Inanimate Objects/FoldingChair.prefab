@@ -180,7 +180,7 @@ MonoBehaviour:
   _suckedVelocity: 4
   _rejectionVelocity: 4
   sprite: {fileID: 0}
-  size: 2
+  size: 1
   baseDamage: 10
   damage: 10
   isPowerUp: 0
