@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemTileController : MonoBehaviour
 {
 
     public GameObject child_tile;
-    public GameObject child_sprite;
+    public GameObject child_image;
     public GameObject child_text;
 
     public abstract class State
@@ -191,6 +192,34 @@ public class ItemTileController : MonoBehaviour
         }
     }
 
+    class SquishingPooping : State
+    {
+        float squishedness = 0.0f;
+        public override State step(float y_height, ItemTileController tile_controller)
+        {
+            y_pos -= 7.5f * Time.deltaTime;
+            squishedness = Mathf.Max(squishedness + 5.0f * Time.deltaTime, 1.0f);
+
+            if (y_pos > 1.0f)
+            {
+                tile_controller.cleanup = true;
+                return this;
+            }
+
+            return this;
+        }
+
+        public override float Width()
+        {
+            return 0.8f + 0.2f * Mathf.Cos(squishedness * squishedness * Mathf.PI / 2);
+        }
+
+        public override float Height()
+        {
+            return 1.0f + 0.1f * Mathf.Sin(squishedness * squishedness * Mathf.PI / 2);
+        }
+    }
+
     class Settled : State
     {
         public override State step(float floor_height, ItemTileController tile_controller)
@@ -231,9 +260,14 @@ public class ItemTileController : MonoBehaviour
     {
     }
 
-    public void Eject()
+    public void Eject(bool up)
     {
-        SquishingRising new_state = new SquishingRising();
+        State new_state;
+        if (up)
+            new_state = new SquishingRising();
+        else
+            new_state = new SquishingPooping();
+
         new_state.y_pos = this.state.y_pos;
         this.state = new_state;
     }
@@ -248,7 +282,7 @@ public class ItemTileController : MonoBehaviour
         this.suckable = suckable;
         this.state.y_pos = y_pos;
 
-        child_sprite.GetComponent<SpriteRenderer>().sprite = suckable.sprite;
+        child_image.GetComponent<Image>().sprite = suckable.sprite;
     }
 
     public void Squish()
