@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         time = 0;
-        AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerKilled);
+        AudioManager.Instance.PlayGameOverSfx();
         while (time < 1)
         {
             time += Time.deltaTime;
@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
             _deathScreen.SetScale(3 * time + 1);
             yield return null;
         }
-        AudioManager.Instance.PlayGameOverSfx();
         // TODO: Play player death animation
     }
 }
