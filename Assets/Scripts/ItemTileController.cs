@@ -6,6 +6,8 @@ public class ItemTileController : MonoBehaviour
 {
 
     public GameObject child_tile;
+    public GameObject child_sprite;
+    public GameObject child_text;
 
     public abstract class State
     {
@@ -245,6 +247,8 @@ public class ItemTileController : MonoBehaviour
     {
         this.suckable = suckable;
         this.state.y_pos = y_pos;
+
+        child_sprite.GetComponent<SpriteRenderer>().sprite = suckable.sprite;
     }
 
     public void Squish()
