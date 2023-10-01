@@ -81,6 +81,7 @@ public class Player : MonoBehaviour, IDamageable
         if (_canBeDamaged && !_isDashing)
         {
             // Check for reduced damage power up
+            CameraController.instance.CameraShake(0.3f, 2.5f);
             int n = Gun.instance.CheckForPowerUp(PowerUpType.defensive);
             currentLife -= (int)((float)amount / (n + 1));
             if (currentLife <= 0)
