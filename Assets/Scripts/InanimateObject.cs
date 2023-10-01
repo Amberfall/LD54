@@ -9,6 +9,11 @@ public class InanimateObject : Suckable
         if (other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable))
         {
             damageable.Damage(damage);
+            VFXManager.instance.SpawnCrashEffect(transform.position);
+        }
+        else
+        {
+            VFXManager.instance.SpawnCrashEffect(transform.position);
         }
         Destroy(gameObject);
     }

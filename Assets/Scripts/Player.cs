@@ -59,6 +59,14 @@ public class Player : MonoBehaviour, IDamageable
             // {
             //     _rb.velocity = _rb.velocity.normalized * _movementSpeed;
             // }
+            if (_rb.velocity.magnitude > 0)
+            {
+                AudioManager.Instance.PlayFootstep();
+            }
+            else
+            {
+                AudioManager.Instance.StopFootstep();
+            }
         }
         else
         {
@@ -88,9 +96,14 @@ public class Player : MonoBehaviour, IDamageable
             currentLife -= (int)((float)amount / (n + 1));
             if (currentLife <= 0)
             {
+                currentLife = 0;
                 GameManager.instance.PlayerDied(transform.position);
                 Destroy(gameObject);
                 return;
+            }
+            else
+            {
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerDamaged);
             }
             StartCoroutine(CanBeDamagedCoroutine());
             // TODO: Trigger invincibility frames

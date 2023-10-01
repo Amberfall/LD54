@@ -41,19 +41,23 @@ public class GameManager : MonoBehaviour
         float time = 0;
         while (time < 1)
         {
-            _deathScreen.SetAlpha(time);
             time += Time.deltaTime;
+            if (time > 1)
+                time = 1;
+            _deathScreen.SetAlpha(time);
             yield return null;
         }
         time = 0;
+        AudioManager.Instance.PlayGameOverSfx();
         while (time < 1)
         {
+            time += Time.deltaTime;
+            if (time > 1)
+                time = 1;
             _cameraTarget.position = Vector3.Lerp(_deathScreen.transform.position, Vector3.zero, time);
             _deathScreen.SetScale(3 * time + 1);
-            time += Time.deltaTime;
             yield return null;
         }
-        AudioManager.Instance.PlayMusic(AudioManager.Music.Death);
         // TODO: Play player death animation
     }
 }
