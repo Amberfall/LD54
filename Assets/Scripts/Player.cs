@@ -32,6 +32,8 @@ public class Player : MonoBehaviour, IDamageable
     public int maxLife;
     public int currentLife;
 
+    [SerializeField] private ParticleSystem _psDash;
+
     private void Awake()
     {
         instance = this;
@@ -112,6 +114,7 @@ public class Player : MonoBehaviour, IDamageable
     private IEnumerator DashCooldownCoroutine()
     {
         _canDash = false;
+        _psDash.Play();
         yield return new WaitForSeconds(_dashCooldown);
         _canDash = true;
     }
