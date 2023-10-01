@@ -13,6 +13,12 @@ public class Suckable : MonoBehaviour, IDamageable
         Shot,
         Rejected,
     }
+    public enum SuckableType
+    {
+        furniture,
+        enemy,
+        powerup,
+    }
     protected Rigidbody2D rb;
     public SuckableState suckableState = SuckableState.Idle;
     protected float _time;
@@ -30,6 +36,7 @@ public class Suckable : MonoBehaviour, IDamageable
     public int baseDamage;
     public int damage;
     public bool isPowerUp;
+    public SuckableType suckableType;
 
     [Header("Life stuff")]
     public int maxLife;
