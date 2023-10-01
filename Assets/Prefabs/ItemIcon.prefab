@@ -324,6 +324,10 @@ MonoBehaviour:
   child_tile: {fileID: 3348842014682040080}
   child_image: {fileID: 711861130735710537}
   child_text: {fileID: 8705786999647410423}
+  sprites:
+  - {fileID: 21300000, guid: 692416473f6db8d439bc3b6358786c50, type: 3}
+  - {fileID: 21300000, guid: 3ee52edcd99413e4fbdaeefe57cde757, type: 3}
+  - {fileID: 21300000, guid: e682c938a1cf9d746a5c31ce4f895366, type: 3}
   cleanup: 0
 --- !u!1 &7371842515623476106
 GameObject:
@@ -539,7 +543,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.85
+  m_fontSize: 77.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

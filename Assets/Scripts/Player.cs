@@ -31,6 +31,9 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Life stuff")]
     public int maxLife;
     public int currentLife;
+    private bool _wasFlipped = true;
+
+    [SerializeField] private Transform _ropeAnchor;
 
     [SerializeField] private ParticleSystem _psDash;
 
@@ -83,6 +86,11 @@ public class Player : MonoBehaviour, IDamageable
 
         _sp.flipX = gunDirection.x > 0;
         _spGun.flipY = gunDirection.x < 0;
+        if (_wasFlipped != _sp.flipX)
+        {
+            _ropeAnchor.localPosition = new Vector3(-_ropeAnchor.localPosition.x, _ropeAnchor.localPosition.y, _ropeAnchor.localPosition.z);
+        }
+        _wasFlipped = _sp.flipX;
 
     }
 

@@ -29,6 +29,8 @@ public class BagController : MonoBehaviour
         // Add tile to this, not just anywhere
         GameObject tile = Instantiate(itemTilePrefab, transform) as GameObject;
         tile.transform.SetParent(this.transform);
+        tile.GetComponent<ItemTileController>().SetSprite(suckable.suckableType);
+
 
         float top_pos = 1.0f;
 

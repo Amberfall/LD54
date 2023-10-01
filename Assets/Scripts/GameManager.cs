@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private DeathScreen _deathScreen;
     [SerializeField] private Transform _cameraTarget;
+    [SerializeField] private CinemachineConfiner2D _cinemachineConfiner2D;
     private void Awake()
     {
         instance = this;
@@ -38,12 +40,16 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.StopMusic();
         _deathScreen.gameObject.SetActive(true);
         _deathScreen.transform.position = position;
+        _cameraTarget.position = _cinemachineConfiner2D.transform.position;
+        var ct = _cameraTarget.GetComponent<CameraTarget>();
+        //_cinemachineConfiner2D.enabled = false;
         float time = 0;
         while (time < 1)
         {
             time += Time.deltaTime;
             if (time > 1)
                 time = 1;
+            ct.cameraOffset = Vector3.Lerp(ct.cameraOffset, Vector3.zero, time);
             _deathScreen.SetAlpha(time);
             yield return null;
         }
@@ -54,7 +60,7 @@ public class GameManager : MonoBehaviour
             time += Time.deltaTime;
             if (time > 1)
                 time = 1;
-            _cameraTarget.position = Vector3.Lerp(_deathScreen.transform.position, Vector3.zero, time);
+            //_cameraTarget.position = Vector3.Lerp(_cameraTarget.position, _deathScreen.transform.position, time);
             _deathScreen.SetScale(3 * time + 1);
             yield return null;
         }
