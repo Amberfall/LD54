@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 4
   furnitures:
-  - {fileID: 2466036535199730417, guid: cb8a9bab791913c48be7311fbffd5bdf, type: 3}
+  - {fileID: 8639594475034853807, guid: 11b44b58ada111f41a8fa641d28a8f07, type: 3}
   - {fileID: 2447324713220874493, guid: 4d570d362446c8f46a062d6c8b26a48a, type: 3}
-  - {fileID: 484412345472523948, guid: eb1909dd836f92542b836410fd3d59e2, type: 3}
+  - {fileID: 2518694027769683632, guid: e490105727a252b48b953b8b8ae153fa, type: 3}
