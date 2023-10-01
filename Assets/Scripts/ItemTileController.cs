@@ -197,10 +197,10 @@ public class ItemTileController : MonoBehaviour
         float squishedness = 0.0f;
         public override State step(float y_height, ItemTileController tile_controller)
         {
-            y_pos -= 7.5f * Time.deltaTime;
+            y_pos -= 2.5f * Time.deltaTime;
             squishedness = Mathf.Max(squishedness + 5.0f * Time.deltaTime, 1.0f);
 
-            if (y_pos > 1.0f)
+            if (y_pos < -1.0f)
             {
                 tile_controller.cleanup = true;
                 return this;
