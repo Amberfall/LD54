@@ -55,6 +55,7 @@ public class Gun : MonoBehaviour
         if (suckables.Count > 0 && Time.time - _time > _timeToShoot)
         {
             Suckable filoSuckable = suckables[suckables.Count - 1];
+            filoSuckable.isDash = false;
             suckables.RemoveAt(suckables.Count - 1);
             filoSuckable.gameObject.SetActive(true);
             filoSuckable.transform.position = _gunTip.position;
@@ -78,6 +79,7 @@ public class Gun : MonoBehaviour
         {
             canDash = true;
             Suckable fifoSuckable = suckables[0];
+            fifoSuckable.isDash = true;
             suckables.RemoveAt(0);
             fifoSuckable.gameObject.SetActive(true);
             fifoSuckable.transform.position = Player.instance.transform.position - direction;

@@ -35,6 +35,7 @@ public class Suckable : MonoBehaviour, IDamageable
     public int maxLife;
     public int currentLife;
     [SerializeField] protected float _yDamagePopupOffset;
+    public bool isDash;
 
     private void Awake()
     {
