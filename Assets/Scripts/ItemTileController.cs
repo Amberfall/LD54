@@ -32,7 +32,7 @@ public class ItemTileController : MonoBehaviour
                 return new_state.step(floor_height, tile_controller);
             }
 
-            squishedness += 0.005f;
+            squishedness += 5.0f * Time.deltaTime;
             if (squishedness >= 1.0f)
             {
                 return new Settled();
@@ -95,12 +95,12 @@ public class ItemTileController : MonoBehaviour
             squish_unsquish = -Mathf.Sqrt((Mathf.Acos(Mathf.Abs(cos))) / Mathf.PI) + 1.0f;
 
             squishedness = squish_unsquish;
-            squishedness += 0.005f;
+            squishedness += 5.0f * Time.deltaTime;
 
-            y_vel -= 0.0025f;
-            y_vel = Mathf.Max(y_vel, -0.1f);
+            y_vel -= 100.0f * Time.deltaTime;
+            y_vel = Mathf.Max(y_vel, -10000.0f);
 
-            y_pos += y_vel;
+            y_pos += y_vel * Time.deltaTime;
 
             if (squishedness >= 1.0f)
             {
@@ -144,10 +144,10 @@ public class ItemTileController : MonoBehaviour
                 return new_state;
             }
 
-            y_vel -= 0.0025f;
-            y_vel = Mathf.Max(y_vel, -0.1f);
+            y_vel -= 100.0f * Time.deltaTime;
+            y_vel = Mathf.Max(y_vel, -10000.0f);
 
-            y_pos += y_vel;
+            y_pos += y_vel * Time.deltaTime;
 
             return this;
         }
@@ -168,8 +168,8 @@ public class ItemTileController : MonoBehaviour
         float squishedness = 0.0f;
         public override State step(float y_height, ItemTileController tile_controller)
         {
-            y_pos += 0.01f;
-            squishedness = Mathf.Max(squishedness + 0.001f, 1.0f);
+            y_pos += 7.5f * Time.deltaTime;
+            squishedness = Mathf.Max(squishedness + 5.0f * Time.deltaTime, 1.0f);
 
             if (y_pos > 1.0f)
             {
