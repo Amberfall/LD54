@@ -31,6 +31,7 @@ public class Gun : MonoBehaviour
         _time = Time.time;
     }
 
+
     private void OnSuckEvent(bool isSucking)
     {
         _suckingCollider.enabled = isSucking;
@@ -67,6 +68,7 @@ public class Gun : MonoBehaviour
             _time = Time.time;
 
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerShoot);
+            CameraController.instance.CameraShake(0.2f, 1.5f);
         }
     }
 
