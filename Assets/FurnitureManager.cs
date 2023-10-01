@@ -19,6 +19,7 @@ public class FurnitureManager : MonoBehaviour
         {
             yield return new WaitForSeconds(_timeBetweenFurnitureSpawn);
             _furnitureSpawnPoint[Random.Range(0, _furnitureSpawnPoint.Length)].SpawnFurnitures();
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.ItemAlert);
         }
     }
 }
