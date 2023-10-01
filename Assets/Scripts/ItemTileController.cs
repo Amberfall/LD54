@@ -9,6 +9,7 @@ public class ItemTileController : MonoBehaviour
     public GameObject child_tile;
     public GameObject child_image;
     public GameObject child_text;
+    public Sprite[] sprites;
 
     public abstract class State
     {
@@ -362,5 +363,10 @@ public class ItemTileController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void SetSprite(Suckable.SuckableType suckableType)
+    {
+        child_tile.GetComponent<Image>().sprite = sprites[(int)suckableType];
     }
 }
