@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Lanky_Demon
     originalName: 
-    pivot: {x: 0.5, y: -0.07017544}
+    pivot: {x: 0.5, y: -0.071428575}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 68
       y: 4
-      width: 26
-      height: 57
+      width: 24
+      height: 56
     spriteID: b121bbf29e9a69b4ab01517ee88050f1
     spriteBone: []
     spriteOutline: []
@@ -138,7 +138,107 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: 68, y: 4}
+  - name: Lanky_Demon_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 68
+      width: 24
+      height: 56
+    spriteID: c7fa6f8a37829ef43a651278798d465a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 68}
+  - name: Lanky_Demon_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.05263158}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 24
+      height: 57
+    spriteID: 861e162631de4964b9fd8e7a944ef9e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Lanky_Demon_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.090909086}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 69
+      width: 24
+      height: 55
+    spriteID: 234f6b6b0ad6e0347a7a0644bbf8610e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 69}
+  - name: Lanky_Demon_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 69
+      width: 24
+      height: 54
+    spriteID: 2452beb2746d0d040ad026e8625b9736
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 69}
+  - name: Lanky_Demon_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.05263158}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 24
+      height: 57
+    spriteID: c56130d67629d6141869bd427bc6f3a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,14 +248,54 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Lanky_Demon
+    - name: Lanky_Demon_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
+        x: 2
         y: 4
-        width: 26
-        height: 57
+        width: 24
+        height: 56
       spriteId: b121bbf29e9a69b4ab01517ee88050f1
+    - name: Lanky_Demon_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 2
+        y: 4
+        width: 24
+        height: 56
+      spriteId: c7fa6f8a37829ef43a651278798d465a
+    - name: Lanky_Demon_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 2
+        y: 3
+        width: 24
+        height: 57
+      spriteId: 861e162631de4964b9fd8e7a944ef9e3
+    - name: Lanky_Demon_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 2
+        y: 5
+        width: 24
+        height: 55
+      spriteId: 234f6b6b0ad6e0347a7a0644bbf8610e
+    - name: Lanky_Demon_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 2
+        y: 6
+        width: 24
+        height: 54
+      spriteId: 2452beb2746d0d040ad026e8625b9736
+    - name: Lanky_Demon_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 2
+        y: 3
+        width: 24
+        height: 57
+      spriteId: c56130d67629d6141869bd427bc6f3a9
     linkedCells: []
     parentIndex: -1
   platformSettings: []
