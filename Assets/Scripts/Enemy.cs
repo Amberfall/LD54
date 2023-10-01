@@ -19,14 +19,7 @@ public class Enemy : Suckable, IDamageable
 
         if (_player != null)
         {
-            //Vector3 target = PlayerBreadCrumbs.instance.GetClosestBreadCrumb(transform.position);
             Vector3 target = _player.transform.position;
-            // rb.AddForce((target - transform.position).normalized * movementSpeed);
-            // //rb.AddForce((_player.transform.position - transform.position).normalized * movementSpeed);
-            // if (rb.velocity.magnitude > movementSpeed)
-            // {
-            //     rb.velocity = rb.velocity.normalized * movementSpeed;
-            // }
             rb.velocity = (_player.transform.position - transform.position).normalized * movementSpeed;
         }
     }
@@ -50,6 +43,13 @@ public class Enemy : Suckable, IDamageable
         {
             other.GetComponent<IDamageable>().Damage(damage);
         }
+    }
+
+    protected override void HandleDeath()
+    {
+        base.HandleDeath();
+        PowerUpsManager.instance.AddKill();
+        PowerUpsManager.instance.RequestPowerUp(transform.position);
     }
 
     protected override void HandleDamageTaken(int amount)

@@ -71,6 +71,26 @@ public class Gun : MonoBehaviour
             CameraController.instance.CameraShake(0.2f, 1.5f);
         }
     }
+    public bool TryToShootEnemyToDash(Vector3 direction)
+    {
+        bool canDash = false;
+        if (suckables.Count > 0)
+        {
+            canDash = true;
+            Suckable fifoSuckable = suckables[0];
+            suckables.RemoveAt(0);
+            fifoSuckable.gameObject.SetActive(true);
+            fifoSuckable.transform.position = Player.instance.transform.position - direction;
+
+            // Check For Power Ups
+            int n = CheckForPowerUp(PowerUpType.damage_multiplier);
+            fifoSuckable.damage = (n > 0 && !fifoSuckable.isPowerUp) ? 3 * n * fifoSuckable.baseDamage : fifoSuckable.baseDamage;
+
+            fifoSuckable.Shoot(-direction * _suckableShootSpeed);
+
+        }
+        return canDash;
+    }
 
     public bool SuckedRequest(Suckable suckable)
     {
