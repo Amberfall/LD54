@@ -88,6 +88,7 @@ public class Player : MonoBehaviour, IDamageable
             currentLife -= (int)((float)amount / (n + 1));
             if (currentLife <= 0)
             {
+                currentLife = 0;
                 GameManager.instance.PlayerDied(transform.position);
                 Destroy(gameObject);
                 return;
