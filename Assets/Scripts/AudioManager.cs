@@ -7,7 +7,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public enum Music { Menu, Level };
-    public enum Sfx { PlayerDamaged, PlayerKilled, VacuumNoise, PortalSpawn, DemonDamaged, PowerUp, PlayerShoot, ItemAlert, VacuumSuck, Footsteps, GameOver, DogBark, EnemyDamaged };
+    public enum Sfx { PlayerDamaged, PlayerKilled, VacuumNoise, PortalSpawn, DemonDamaged, PowerUp, PlayerShoot, ItemAlert, VacuumSuck, Footsteps, GameOver, DogBark, EnemyDamaged, Thud, Dash, UpgradeEaten };
+
+    [SerializeField] private Transform _audioSourcePrefab;
 
     [SerializeField] private AudioClip[] musicClips;
     [SerializeField] private AudioClip[] sfxClips;
@@ -69,6 +71,9 @@ public class AudioManager : MonoBehaviour
         sfxDatabase.Add(Sfx.GameOver, sfxClips[9]);
         sfxDatabase.Add(Sfx.DogBark, sfxClips[10]);
         sfxDatabase.Add(Sfx.EnemyDamaged, sfxClips[11]);
+        sfxDatabase.Add(Sfx.Thud, sfxClips[12]);
+        sfxDatabase.Add(Sfx.Dash, sfxClips[13]);
+        sfxDatabase.Add(Sfx.UpgradeEaten, sfxClips[14]);
     }
 
     public void PlayMusic(AudioManager.Music music)
@@ -118,9 +123,15 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySfx(AudioManager.Sfx sfx)
     {
+        AudioSource tempAudioSource = Instantiate(_audioSourcePrefab, new Vector3(0, 0 ,0), Quaternion.identity).GetComponent<AudioSource>();
+        tempAudioSource.clip = sfxDatabase[sfx];
+        tempAudioSource.Play();
+    }
+
+    public void PlaySfx(AudioManager.Sfx sfx, Vector3 position) {
         if (GameManager.instance.isPlayerAlive)
         {
-            AudioSource.PlayClipAtPoint(sfxDatabase[sfx], new Vector3(0, 0, 0));
+            AudioSource.PlayClipAtPoint(sfxDatabase[sfx], position);
         }
     }
 

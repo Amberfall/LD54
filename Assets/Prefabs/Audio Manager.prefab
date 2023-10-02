@@ -300,9 +300,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
-  m_Pitch: 0.5
-  Loop: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc61b7ab2ba7ea4ea8407ed0e44af9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSourcePrefab: {fileID: 2960666298674570479, guid: 60c4d958b02cd7c47b9b31801e68351e, type: 3}
   musicClips:
   - {fileID: 8300000, guid: 7ad24cd667c71164f8f8f2c2ed3010ea, type: 3}
   - {fileID: 8300000, guid: 460004e5e7dd795438ca392dbea3cc91, type: 3}
@@ -545,3 +546,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0996503639c981c4b8802adc8594cd70, type: 3}
   - {fileID: 8300000, guid: a10729143108c964697b2afbdec0106a, type: 3}
   - {fileID: 8300000, guid: f2b39aeffc7037e4e9cbc0be938269d7, type: 3}
+  - {fileID: 8300000, guid: 127223d2f116ae64292fe08a3893cfb3, type: 3}
+  - {fileID: 8300000, guid: 8ff6e7190e332974c9efb1f2d6350304, type: 3}

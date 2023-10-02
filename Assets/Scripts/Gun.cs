@@ -104,6 +104,9 @@ public class Gun : MonoBehaviour
             suckable.gameObject.SetActive(false);
             suckables.Add(suckable);
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.VacuumSuck);
+            if (suckable.isPowerUp) {
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.UpgradeEaten);
+            }
         }
         return canFitInBag;
     }

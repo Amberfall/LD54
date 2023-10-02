@@ -36,7 +36,7 @@ public class PortalManager : MonoBehaviour
                         Instantiate(_portalWaves[currentWave].spawnPortals[portalNumber - 1], _spawnPoints[rnd].transform.position, Quaternion.identity);
                         _spawnPoints[rnd].busy = true;
                         portalNumber--;
-                        AudioManager.Instance.PlaySfx(AudioManager.Sfx.PortalSpawn);
+                        AudioManager.Instance.PlaySfx(AudioManager.Sfx.PortalSpawn, _spawnPoints[rnd].transform.position);
                     }
                 }
             }

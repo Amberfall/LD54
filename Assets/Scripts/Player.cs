@@ -134,6 +134,7 @@ public class Player : MonoBehaviour, IDamageable
                 _rb.velocity = direction * _dashSpeed;
                 _timeWhenDashed = Time.time;
                 StartCoroutine(DashCooldownCoroutine());
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.Dash); // TODO - player position
             }
         }
     }
