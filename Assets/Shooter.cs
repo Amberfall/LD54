@@ -12,8 +12,11 @@ public class Shooter : MonoBehaviour
     [SerializeField] private Transform _spawnPointTransform;
     void Start()
     {
-        _playerTransform = Player.instance.transform;
-        StartCoroutine(ShootingCoroutine());
+        if (Player.instance != null)
+        {
+            _playerTransform = Player.instance.transform;
+            StartCoroutine(ShootingCoroutine());
+        }
     }
 
     private IEnumerator ShootingCoroutine()
