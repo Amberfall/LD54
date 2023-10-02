@@ -120,5 +120,10 @@ public class Menu : MonoBehaviour
             AudioManager.Instance.StopMusic();
             AudioManager.Instance.PlayMusic(AudioManager.Music.Menu);
         }
+        if (SceneManager.GetActiveScene().name == "Win")
+        {
+            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.PlayMusic(AudioManager.Music.Victory);
+        }
     }
 }
