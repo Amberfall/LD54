@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public enum Music { Menu, Level };
-    public enum Sfx { PlayerDamaged, PlayerKilled, VacuumNoise, PortalSpawn, DemonDamaged, PowerUp, PlayerShoot, ItemAlert, VacuumSuck, Footsteps, GameOver, DogBark, EnemyDamaged, Thud, Dash, UpgradeEaten, EnemyShoot, Crash, OverHere, HealthUp };
+    public enum Sfx { PlayerDamaged, PlayerKilled, VacuumNoise, PortalSpawn, DemonDamaged, PowerUp, PlayerShoot, ItemAlert, VacuumSuck, Footsteps, GameOver, DogBark, EnemyDamaged, Thud, Dash, UpgradeEaten, EnemyShoot, Crash, OverHere, HealthUp, OverHere2, OverHere3 };
 
     [SerializeField] private Transform _audioSourcePrefab;
 
@@ -79,6 +79,8 @@ public class AudioManager : MonoBehaviour
         sfxDatabase.Add(Sfx.Crash, sfxClips[16]);
         sfxDatabase.Add(Sfx.OverHere, sfxClips[17]);
         sfxDatabase.Add(Sfx.HealthUp, sfxClips[18]);
+        sfxDatabase.Add(Sfx.OverHere2, sfxClips[19]);
+        sfxDatabase.Add(Sfx.OverHere3, sfxClips[20]);
     }
 
     public void PlayMusic(AudioManager.Music music)
