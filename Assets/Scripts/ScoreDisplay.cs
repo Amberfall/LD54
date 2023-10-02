@@ -22,7 +22,7 @@ public class ScoreDisplay : MonoBehaviour
         _score.text = "Score: " + _scoreManager.score.ToString();
         if (_scoreManager.scoreMultiplier > 1)
         {
-            _combo.text = "X " + _scoreManager.scoreMultiplier.ToString();
+            _combo.text = "X " + _scoreManager.scoreMultiplier.ToString("#.#");
         }
         else
         {

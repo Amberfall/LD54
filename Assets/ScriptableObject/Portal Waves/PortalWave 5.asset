@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPortals:
   - {fileID: 5942248799434425099, guid: 98c4527edd92cdc449f0ad39e3359736, type: 3}
+  - {fileID: 3563060175342606553, guid: 66a461b415a65ce4795f2db8abb8eb00, type: 3}

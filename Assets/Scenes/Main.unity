@@ -1168,6 +1168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garden
       objectReference: {fileID: 0}
+    - target: {fileID: 4179035722720467678, guid: f07b386f12f6cb44c970d6c9a9718838, type: 3}
+      propertyPath: _timeToSpawn
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5979409616655504330, guid: f07b386f12f6cb44c970d6c9a9718838, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.76
@@ -1584,6 +1588,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 82ff2b4ba06c9a44aa4e77315d9fc1b7, type: 2}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 34bf59fd38fa55e4c9918c927fb8fb3a, type: 2}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: c5f0dc6e8cd86034c97b11fb585bed96, type: 2}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 487fe676b8d963841a81f064fe37b50d, type: 2}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 238dd285ae2973f4da511b0c545f7d67, type: 2}
+    - target: {fileID: 5731509708877673929, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
+      propertyPath: _portalWaves.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 081a89568aaded84ca99c8ca32084437, type: 2}
     - target: {fileID: 6146089325645492307, guid: 9a743926dcd687c4c8e44de923b7846d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.98

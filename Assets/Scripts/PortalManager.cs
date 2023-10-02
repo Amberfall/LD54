@@ -8,6 +8,7 @@ public class PortalManager : MonoBehaviour
     [SerializeField] private PortalWave[] _portalWaves;
     [SerializeField] private SpawnPoint[] _spawnPoints;
     int currentWave;
+    private bool _canSpawnWaves = true;
 
     private void Awake()
     {
@@ -22,10 +23,15 @@ public class PortalManager : MonoBehaviour
 
     public void SpawnNextWave()
     {
+        if (!_canSpawnWaves)
+            return;
+
+        StartCoroutine(canSpawnWavesCoroutine());
         if (GameManager.instance.isPlayerAlive)
         {
             if (currentWave < _portalWaves.Length)
             {
+                Debug.Log("WAVE N°: " + currentWave.ToString() + " | Time: " + Time.time.ToString());
                 ResetSpawnPoints();
                 int portalNumber = _portalWaves[currentWave].spawnPortals.Length;
                 while (portalNumber > 0)
@@ -42,6 +48,13 @@ public class PortalManager : MonoBehaviour
             }
             currentWave++;
         }
+    }
+
+    IEnumerator canSpawnWavesCoroutine()
+    {
+        _canSpawnWaves = false;
+        yield return new WaitForSeconds(5.0f);
+        _canSpawnWaves = true;
     }
 
     private void ResetSpawnPoints()

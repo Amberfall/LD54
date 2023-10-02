@@ -91,7 +91,7 @@ public class Gun : MonoBehaviour
 
             // Check For Power Ups
             int n = CheckForPowerUp(PowerUpType.damage_multiplier);
-            fifoSuckable.damage = (n > 0 && !fifoSuckable.isPowerUp) ? 3 * n * fifoSuckable.baseDamage : fifoSuckable.baseDamage;
+            fifoSuckable.damage = (int)((1 + 0.5f * n) * fifoSuckable.baseDamage);
 
             fifoSuckable.Shoot(-direction * _suckableShootSpeed);
             Instantiate(_dustPuff, _gunTip.position, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, -direction)));
@@ -101,7 +101,7 @@ public class Gun : MonoBehaviour
 
     public bool SuckedRequest(Suckable suckable)
     {
-        bool canFitInBag = suckable.size + GetSuckablesTotalSize() < maxBagSpace;
+        bool canFitInBag = suckable.size + GetSuckablesTotalSize() <= maxBagSpace;
         if (suckable.suckableType == Suckable.SuckableType.consumable)
         {
             var p = Player.instance;
@@ -109,6 +109,7 @@ public class Gun : MonoBehaviour
             if (p.currentLife > p.maxLife)
                 p.currentLife = p.maxLife;
             DamagePopupManager.instance.CreateHealthPopup(p.transform.position + Vector3.up * 2, suckable.GetComponent<Consumable>().life);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.HealthUp);
             Destroy(suckable.gameObject);
         }
         else if (canFitInBag)

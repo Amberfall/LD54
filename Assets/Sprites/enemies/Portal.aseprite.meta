@@ -127,7 +127,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 52
-      y: 100
+      y: 75
       width: 42
       height: 13
     spriteID: 2b38229b9989d7840bc29db1b47a2c3b
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 52, y: 100}
+    uvTransform: {x: 52, y: 75}
   - name: Portal_Frame_1
     originalName: 
     pivot: {x: 0.5666667, y: -1}
@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 56
+      y: 193
       width: 30
       height: 10
     spriteID: 5118f957020010a4d9f237f66c1a7756
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 56}
+    uvTransform: {x: 4, y: 193}
   - name: Portal_Frame_2
     originalName: 
     pivot: {x: 0.5, y: -0.4666667}
@@ -206,8 +206,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 52
-      y: 75
+      x: 4
+      y: 144
       width: 38
       height: 17
     spriteID: 5a055ed4384126446b1d047641295827
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 52, y: 75}
+    uvTransform: {x: 4, y: 144}
   - name: Portal_Frame_3
     originalName: 
     pivot: {x: 0.5, y: -0.2}
@@ -241,15 +241,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Portal_Frame_4
     originalName: 
-    pivot: {x: 0.46153846, y: -1.5714287}
+    pivot: {x: 0.5, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 108
-      y: 4
-      width: 13
-      height: 7
+      x: 4
+      y: 32
+      width: 40
+      height: 20
     spriteID: 8744729203907a84496e60639e835bee
     spriteBone: []
     spriteOutline: []
@@ -258,18 +258,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 108, y: 4}
+    uvTransform: {x: 4, y: 32}
   - name: Portal_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -1.375}
+    pivot: {x: 0.5, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 98
-      y: 75
-      width: 18
-      height: 8
+      x: 4
+      y: 60
+      width: 40
+      height: 20
     spriteID: a03636874f58bf34387ad2651485d027
     spriteBone: []
     spriteOutline: []
@@ -278,18 +278,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 98, y: 75}
+    uvTransform: {x: 4, y: 60}
   - name: Portal_Frame_6
     originalName: 
-    pivot: {x: 0.51851857, y: -1.2222222}
+    pivot: {x: 0.5, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 74
-      width: 27
-      height: 9
+      y: 88
+      width: 40
+      height: 20
     spriteID: 1cff17b9fb04e1a45a50e5813013e325
     spriteBone: []
     spriteOutline: []
@@ -298,8 +298,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 74}
+    uvTransform: {x: 4, y: 88}
   - name: Portal_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 116
+      width: 40
+      height: 20
+    spriteID: fde8673786402ae4a9864495901f62cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 116}
+  - name: Portal_Frame_7
+    originalName: 
+    pivot: {x: 0.46153846, y: -1.5714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 228
+      width: 13
+      height: 7
+    spriteID: 06ea1eeb2dd5be3408515027eb0f6457
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 228}
+  - name: Portal_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 228
+      width: 18
+      height: 8
+    spriteID: 5f8457241e63b744895ecccc9f49de83
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 228}
+  - name: Portal_Frame_6
+    originalName: 
+    pivot: {x: 0.51851857, y: -1.2222222}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 211
+      width: 27
+      height: 9
+    spriteID: f8920f405ac6bc0428b9492fee430137
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 211}
+  - name: Portal_Frame_3
     originalName: 
     pivot: {x: 0.4761905, y: -0.61538464}
     alignment: 9
@@ -310,7 +390,7 @@ ScriptedImporter:
       y: 27
       width: 21
       height: 13
-    spriteID: fde8673786402ae4a9864495901f62cb
+    spriteID: dc8f209d99ac7654d96d8effc87f8b99
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -319,7 +399,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 103, y: 27}
-  - name: Portal_Frame_7
+  - name: Portal_Frame_4
     originalName: 
     pivot: {x: 0.59090906, y: -0.53846157}
     alignment: 9
@@ -330,7 +410,7 @@ ScriptedImporter:
       y: 51
       width: 22
       height: 13
-    spriteID: 06ea1eeb2dd5be3408515027eb0f6457
+    spriteID: 4198b7f3e084b5c4889d3767e80d5e0c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -347,10 +427,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 32
+      y: 169
       width: 27
       height: 16
-    spriteID: 5f8457241e63b744895ecccc9f49de83
+    spriteID: 1479b99af1798064782bbf79f6365db6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -358,7 +438,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 32}
+    uvTransform: {x: 4, y: 169}
   - name: Portal_Frame_6
     originalName: 
     pivot: {x: 0.47619048, y: -0.4375}
@@ -370,7 +450,7 @@ ScriptedImporter:
       y: 51
       width: 42
       height: 16
-    spriteID: f8920f405ac6bc0428b9492fee430137
+    spriteID: 660e8a58f5cdaf542883d3166091268e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -436,6 +516,38 @@ ScriptedImporter:
         width: 40
         height: 20
       spriteId: d838c59830f3c8b468799e1fac4f8908
+    - name: Portal_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 4
+        y: 4
+        width: 40
+        height: 20
+      spriteId: 8744729203907a84496e60639e835bee
+    - name: Portal_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 4
+        y: 4
+        width: 40
+        height: 20
+      spriteId: a03636874f58bf34387ad2651485d027
+    - name: Portal_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 4
+        y: 4
+        width: 40
+        height: 20
+      spriteId: 1cff17b9fb04e1a45a50e5813013e325
+    - name: Portal_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 4
+        y: 4
+        width: 40
+        height: 20
+      spriteId: fde8673786402ae4a9864495901f62cb
     - name: Portal_Frame_0
       frameIndex: 0
       cellRect:
@@ -443,7 +555,7 @@ ScriptedImporter:
         y: 11
         width: 13
         height: 7
-      spriteId: 8744729203907a84496e60639e835bee
+      spriteId: 06ea1eeb2dd5be3408515027eb0f6457
     - name: Portal_Frame_1
       frameIndex: 1
       cellRect:
@@ -451,7 +563,7 @@ ScriptedImporter:
         y: 11
         width: 18
         height: 8
-      spriteId: a03636874f58bf34387ad2651485d027
+      spriteId: 5f8457241e63b744895ecccc9f49de83
     - name: Portal_Frame_2
       frameIndex: 2
       cellRect:
@@ -459,7 +571,7 @@ ScriptedImporter:
         y: 11
         width: 27
         height: 9
-      spriteId: 1cff17b9fb04e1a45a50e5813013e325
+      spriteId: f8920f405ac6bc0428b9492fee430137
     - name: Portal_Frame_3
       frameIndex: 3
       cellRect:
@@ -467,7 +579,7 @@ ScriptedImporter:
         y: 8
         width: 21
         height: 13
-      spriteId: fde8673786402ae4a9864495901f62cb
+      spriteId: dc8f209d99ac7654d96d8effc87f8b99
     - name: Portal_Frame_4
       frameIndex: 4
       cellRect:
@@ -475,7 +587,7 @@ ScriptedImporter:
         y: 7
         width: 22
         height: 13
-      spriteId: 06ea1eeb2dd5be3408515027eb0f6457
+      spriteId: 4198b7f3e084b5c4889d3767e80d5e0c
     - name: Portal_Frame_5
       frameIndex: 5
       cellRect:
@@ -483,7 +595,7 @@ ScriptedImporter:
         y: 7
         width: 27
         height: 16
-      spriteId: 5f8457241e63b744895ecccc9f49de83
+      spriteId: 1479b99af1798064782bbf79f6365db6
     - name: Portal_Frame_6
       frameIndex: 6
       cellRect:
@@ -491,7 +603,7 @@ ScriptedImporter:
         y: 7
         width: 42
         height: 16
-      spriteId: f8920f405ac6bc0428b9492fee430137
+      spriteId: 660e8a58f5cdaf542883d3166091268e
     linkedCells: []
     parentIndex: -1
   platformSettings: []

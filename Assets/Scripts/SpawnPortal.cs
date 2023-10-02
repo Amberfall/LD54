@@ -43,13 +43,14 @@ public class SpawnPortal : MonoBehaviour
             if (waveNumberLeft == 0)
             {
                 GetComponentInChildren<SpriteRenderer>().enabled = false;
+                yield return new WaitForSeconds(_timeBetweenEnemyWaves / 2);
+                PortalManager.instance.SpawnNextWave();
+                if (isLastPortal)
+                {
+                    GameManager.instance.checkForWinCondition = true;
+                }
             }
             yield return new WaitForSeconds(_timeBetweenEnemyWaves);
-        }
-        PortalManager.instance.SpawnNextWave();
-        if (isLastPortal)
-        {
-            GameManager.instance.checkForWinCondition = true;
         }
         Destroy(gameObject);
     }
