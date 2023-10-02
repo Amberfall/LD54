@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: -2057989761, guid: a2abf7cbf7df2d946a726f9d825d090d, type: 3}
     - target: {fileID: 5681515272595512166, guid: 197a6232cdd7b134abc70db91efd3392, type: 3}
       propertyPath: baseDamage
-      value: 8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6297612511707729675, guid: 197a6232cdd7b134abc70db91efd3392, type: 3}
       propertyPath: m_LocalPosition.x

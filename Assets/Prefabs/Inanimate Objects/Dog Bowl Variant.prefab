@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: -1806127968, guid: a2abf7cbf7df2d946a726f9d825d090d, type: 3}
     - target: {fileID: 3216912147512893950, guid: 0fb0e9a212940ab4e9d4f0708014252c, type: 3}
       propertyPath: baseDamage
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3826253953088304531, guid: 0fb0e9a212940ab4e9d4f0708014252c, type: 3}
       propertyPath: m_LocalPosition.x

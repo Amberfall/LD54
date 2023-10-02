@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &487506242 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8981797160407064532, guid: 6d3487042df37354687ea4bd5d5a941c, type: 3}
+  m_PrefabInstance: {fileID: 5464855898974678258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +967,11 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!4 &2037857011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5324755638096441807, guid: 6d3487042df37354687ea4bd5d5a941c, type: 3}
+  m_PrefabInstance: {fileID: 5464855898974678258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2089574097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1430,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7293478861361193667, guid: 6d3487042df37354687ea4bd5d5a941c, type: 3}
+      propertyPath: _sp
+      value: 
+      objectReference: {fileID: 487506242}
+    - target: {fileID: 7293478861361193667, guid: 6d3487042df37354687ea4bd5d5a941c, type: 3}
+      propertyPath: _bottomTransform
+      value: 
+      objectReference: {fileID: 2037857011}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -163,7 +163,7 @@ MonoBehaviour:
   _rejectionVelocity: 4
   sprite: {fileID: 0}
   size: 1
-  baseDamage: 4
+  baseDamage: 30
   damage: 10
   isPowerUp: 0
   suckableType: 0

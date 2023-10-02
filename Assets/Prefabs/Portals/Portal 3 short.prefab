@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2857097081963313645
+--- !u!1001 &1314338542540945813
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,11 +9,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
-      propertyPath: _enemies.Array.size
+      propertyPath: _waveNumber
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
-      propertyPath: _averageEnemyPerWave
+      propertyPath: _enemies.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 216338944214984859, guid: 37e9cae1d1a088d48825b66d13cda14e, type: 3}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _timeBetweenEnemyWaves
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.size
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.data[0]
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.data[1]
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.data[2]
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5158492882649468625, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906033644168219926, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: m_Name
-      value: Portal 4
+      value: Portal 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

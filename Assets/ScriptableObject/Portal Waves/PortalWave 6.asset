@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: PortalWave 6
   m_EditorClassIdentifier: 
   spawnPortals:
-  - {fileID: 5942248799434425099, guid: 98c4527edd92cdc449f0ad39e3359736, type: 3}
   - {fileID: 7488393905654481779, guid: 56daecfdadcc4fa469def494b6ae6ead, type: 3}
-  - {fileID: 3404500959216632241, guid: 2b0172174e1a2e540af80f6f0628ce32, type: 3}

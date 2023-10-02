@@ -10,22 +10,34 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _waveNumber
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemies.Array.data[0]
       value: 
       objectReference: {fileID: 1289781826004469637, guid: 5215585ffb4d1a14eb59bb9f3945a60d, type: 3}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 7489036938189484446, guid: 23e09478d59ce544baa2e5b6a41fe840, type: 3}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _timeBetweenEnemyWaves
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemySpawnWeight.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemySpawnWeight.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5158492882649468625, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
@@ -70,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906033644168219926, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: m_Name
-      value: Portal 1
+      value: Portal 1 short
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
