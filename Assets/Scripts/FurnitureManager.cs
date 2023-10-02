@@ -23,6 +23,7 @@ public class FurnitureManager : MonoBehaviour
 
     private IEnumerator SpawnFurniture()
     {
+        yield return new WaitForSeconds(10f);
         while (GameManager.instance.isPlayerAlive)
         {
             yield return new WaitForSeconds(_timeBetweenFurnitureSpawn);

@@ -48,8 +48,16 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3073279045052444372, guid: 1f0f6e10176d3304bbdb77f014dc5c90, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073279045052444372, guid: 1f0f6e10176d3304bbdb77f014dc5c90, type: 3}
       propertyPath: enemyType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073279045052444372, guid: 1f0f6e10176d3304bbdb77f014dc5c90, type: 3}
+      propertyPath: baseDamage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3073279045052444372, guid: 1f0f6e10176d3304bbdb77f014dc5c90, type: 3}
       propertyPath: movementSpeed

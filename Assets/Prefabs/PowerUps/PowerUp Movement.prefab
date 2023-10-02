@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: powerUpType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4349451427400276757, guid: e5f87219727760d44957c12295c496fd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ad48158cd45a6b840bc05bc1802b8c60, type: 2}
     - target: {fileID: 4473783099645824587, guid: e5f87219727760d44957c12295c496fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

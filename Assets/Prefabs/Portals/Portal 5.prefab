@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 216338944214984859, guid: 37e9cae1d1a088d48825b66d13cda14e, type: 3}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _timeBetweenEnemyWaves
-      value: 6
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.size

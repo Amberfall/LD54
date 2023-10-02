@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _timeBetweenEnemyWaves
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.data[0]
