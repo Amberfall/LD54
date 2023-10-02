@@ -25,6 +25,7 @@ public class Shooter : MonoBehaviour
             {
                 var b = Instantiate(_bulletPrefab, _spawnPointTransform.position, Quaternion.identity);
                 b.SetVelocity((_playerTransform.position - _spawnPointTransform.position).normalized * _bulletSpeed);
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.EnemyShoot, _spawnPointTransform.position);
             }
         }
     }

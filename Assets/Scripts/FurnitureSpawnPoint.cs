@@ -20,6 +20,10 @@ public class FurnitureSpawnPoint : MonoBehaviour
         float spawnRadius = _furnitureList.spawnRadius;
         List<GameObject> dropPositions = new List<GameObject>();
         _bubbleSpawnTransform.gameObject.SetActive(true);
+
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.ItemAlert, transform.position);
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.OverHere, transform.position);
+
         for (int i = 0; i < furnitureNumber; i++)
         {
             var go = Instantiate(_dropPositionPrefab, transform.position + new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), 0), Quaternion.identity);
@@ -36,6 +40,7 @@ public class FurnitureSpawnPoint : MonoBehaviour
             Destroy(go);
             yield return new WaitForSeconds(Random.Range(0, 0.5f));
         }
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Thud, transform.position);
     }
 
 

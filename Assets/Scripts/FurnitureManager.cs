@@ -30,7 +30,6 @@ public class FurnitureManager : MonoBehaviour
             if (n < _maxFurnitureNumber)
             {
                 _furnitureSpawnPoint[Random.Range(0, _furnitureSpawnPoint.Length)].SpawnFurnitures();
-                AudioManager.Instance.PlaySfx(AudioManager.Sfx.ItemAlert);
             }
         }
     }
