@@ -18,6 +18,7 @@ public class Suckable : MonoBehaviour, IDamageable
         furniture,
         enemy,
         powerup,
+        consumable,
     }
     protected Rigidbody2D rb;
     public SuckableState suckableState = SuckableState.Idle;

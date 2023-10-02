@@ -94,7 +94,6 @@ public class Gun : MonoBehaviour
             fifoSuckable.damage = (n > 0 && !fifoSuckable.isPowerUp) ? 3 * n * fifoSuckable.baseDamage : fifoSuckable.baseDamage;
 
             fifoSuckable.Shoot(-direction * _suckableShootSpeed);
-            Debug.Log("!!");
             Instantiate(_dustPuff, _gunTip.position, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, -direction)));
         }
         return canDash;
@@ -103,7 +102,16 @@ public class Gun : MonoBehaviour
     public bool SuckedRequest(Suckable suckable)
     {
         bool canFitInBag = suckable.size + GetSuckablesTotalSize() < maxBagSpace;
-        if (canFitInBag)
+        if (suckable.suckableType == Suckable.SuckableType.consumable)
+        {
+            var p = Player.instance;
+            p.currentLife += suckable.GetComponent<Consumable>().life;
+            if (p.currentLife > p.maxLife)
+                p.currentLife = p.maxLife;
+            DamagePopupManager.instance.CreateHealthPopup(p.transform.position + Vector3.up * 2, suckable.GetComponent<Consumable>().life);
+            Destroy(suckable.gameObject);
+        }
+        else if (canFitInBag)
         {
             suckable.gameObject.SetActive(false);
             suckables.Add(suckable);

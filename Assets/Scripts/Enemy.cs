@@ -1,17 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Enemy : Suckable, IDamageable
 {
+    public enum EnemyType
+    {
+        Bubble,
+        Lanky,
+        Toothy,
+    }
+    public EnemyType enemyType;
     private Player _player;
     public float movementSpeed;
     [SerializeField] private Lifebar _lifebar;
+    private Toothy _toothy;
+    [SerializeField] private int _score;
     protected override void Initialization()
     {
         base.Initialization();
         _player = Player.instance;
         _lifebar = GetComponentInChildren<Lifebar>();
+        _toothy = GetComponent<Toothy>();
     }
     protected override void IdleState()
     {
@@ -19,8 +30,45 @@ public class Enemy : Suckable, IDamageable
 
         if (_player != null)
         {
-            Vector3 target = _player.transform.position;
-            rb.velocity = (_player.transform.position - transform.position).normalized * movementSpeed;
+            Vector3 distance = _player.transform.position - transform.position;
+            if (enemyType == EnemyType.Bubble)
+            {
+                rb.velocity = distance.normalized * movementSpeed;
+            }
+            else if (enemyType == EnemyType.Lanky)
+            {
+                if (distance.magnitude > GetComponent<Shooter>().minDistanceToShoot)
+                {
+                    rb.velocity = distance.normalized * movementSpeed;
+                }
+                else
+                {
+                    rb.velocity = distance.normalized * movementSpeed / 3f;
+                    GetComponent<Shooter>().Shoot();
+                }
+            }
+            else if (enemyType == EnemyType.Toothy)
+            {
+                if (!_toothy.isCharging)
+                {
+                    if (_toothy.canCharge)
+                    {
+                        if (distance.magnitude < _toothy.distanceToCharge)
+                        {
+                            _toothy.Charge();
+                            rb.velocity = distance.normalized * _toothy.chargeSpeed;
+                        }
+                        else
+                        {
+                            rb.velocity = distance.normalized * movementSpeed;
+                        }
+                    }
+                    else
+                    {
+                        rb.velocity = distance.normalized * movementSpeed;
+                    }
+                }
+            }
         }
         else
         {
@@ -55,6 +103,8 @@ public class Enemy : Suckable, IDamageable
         base.HandleDeath();
         PowerUpsManager.instance.AddKill();
         PowerUpsManager.instance.RequestPowerUp(transform.position);
+        ScoreManager.instance.AddPoints(_score);
+        ScoreManager.instance.IncreaseScoreMultiplier();
     }
 
     protected override void HandleDamageTaken(int amount)

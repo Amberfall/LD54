@@ -120,6 +120,7 @@ public class Player : MonoBehaviour, IDamageable
             if (n > 3)
                 n = 3;
             currentLife -= (int)((float)amount * (1 - n * 0.3f));
+            ScoreManager.instance.ResetScoreMultiplier();
             if (currentLife <= 0)
             {
                 currentLife = 0;
