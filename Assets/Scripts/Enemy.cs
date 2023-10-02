@@ -16,6 +16,7 @@ public class Enemy : Suckable, IDamageable
     public float movementSpeed;
     [SerializeField] private Lifebar _lifebar;
     private Toothy _toothy;
+    [SerializeField] private int _score;
     protected override void Initialization()
     {
         base.Initialization();
@@ -102,6 +103,8 @@ public class Enemy : Suckable, IDamageable
         base.HandleDeath();
         PowerUpsManager.instance.AddKill();
         PowerUpsManager.instance.RequestPowerUp(transform.position);
+        ScoreManager.instance.AddPoints(_score);
+        ScoreManager.instance.IncreaseScoreMultiplier();
     }
 
     protected override void HandleDamageTaken(int amount)

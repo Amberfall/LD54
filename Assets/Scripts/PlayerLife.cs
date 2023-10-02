@@ -18,7 +18,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (Player.instance != null)
         {
-            _textMeshProUGUI.text = _player.currentLife.ToString() + "/" + _player.maxLife.ToString();
+            _textMeshProUGUI.text = "life: " + _player.currentLife.ToString();
         }
     }
 }

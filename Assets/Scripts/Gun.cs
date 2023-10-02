@@ -94,7 +94,6 @@ public class Gun : MonoBehaviour
             fifoSuckable.damage = (n > 0 && !fifoSuckable.isPowerUp) ? 3 * n * fifoSuckable.baseDamage : fifoSuckable.baseDamage;
 
             fifoSuckable.Shoot(-direction * _suckableShootSpeed);
-            Debug.Log("!!");
             Instantiate(_dustPuff, _gunTip.position, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, -direction)));
         }
         return canDash;
