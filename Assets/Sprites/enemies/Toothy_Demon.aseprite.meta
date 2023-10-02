@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Toothy_Demon
     originalName: 
-    pivot: {x: 0.5, y: -0.9130435}
+    pivot: {x: 0.4883721, y: -0.34375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 48
-      height: 23
+      width: 43
+      height: 32
     spriteID: f5f8cc40c29b41d41a91e52d75558510
     spriteBone: []
     spriteOutline: []
@@ -139,6 +139,46 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Toothy_Demon_Frame_1
+    originalName: 
+    pivot: {x: 0.5116279, y: -0.36666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 43
+      height: 30
+    spriteID: 202777efac56e8a4e8d06b09c536b5ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: Toothy_Demon_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.4814815}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 82
+      width: 44
+      height: 27
+    spriteID: 8c907762311aea5429aab79a86e42104
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 82}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,14 +188,30 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Toothy_Demon
+    - name: Toothy_Demon_Frame_0
       frameIndex: 0
       cellRect:
-        x: 8
-        y: 21
-        width: 48
-        height: 23
+        x: 11
+        y: 11
+        width: 43
+        height: 32
       spriteId: f5f8cc40c29b41d41a91e52d75558510
+    - name: Toothy_Demon_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 10
+        y: 11
+        width: 43
+        height: 30
+      spriteId: 202777efac56e8a4e8d06b09c536b5ae
+    - name: Toothy_Demon_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 10
+        y: 13
+        width: 44
+        height: 27
+      spriteId: 8c907762311aea5429aab79a86e42104
     linkedCells: []
     parentIndex: -1
   platformSettings: []

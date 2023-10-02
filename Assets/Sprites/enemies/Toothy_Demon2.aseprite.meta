@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd5d41777cfeded469dd94d1dfb07bbd
+guid: 4b524d756958fde4b82048fb16b2362e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Toss_Alert_Generic
+  - name: Toothy_Demon2_Frame_0
     originalName: 
-    pivot: {x: 0.41818184, y: -0.78787875}
+    pivot: {x: 0.4883721, y: -0.34375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 55
-      height: 33
-    spriteID: a93dced593375b547ba87a736c0942c5
+      width: 43
+      height: 32
+    spriteID: be25d8f2bb273894280bbf0925583c8a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,26 +139,82 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Toothy_Demon2_Frame_1
+    originalName: 
+    pivot: {x: 0.5116279, y: -0.36666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 43
+      height: 30
+    spriteID: e8d4de1f75b52ca4eb88101b4449e36e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: Toothy_Demon2_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.4814815}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 82
+      width: 44
+      height: 27
+    spriteID: ed32605111136bb408b14f1be63d58bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 82}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1418624674
-    name: Toss_Alert_Generic
+    guid: 1012537149
+    name: Toothy_Demon2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Toss_Alert_Generic
+    - name: Toothy_Demon2_Frame_0
       frameIndex: 0
       cellRect:
-        x: 20
-        y: 26
-        width: 55
-        height: 33
-      spriteId: a93dced593375b547ba87a736c0942c5
+        x: 11
+        y: 11
+        width: 43
+        height: 32
+      spriteId: be25d8f2bb273894280bbf0925583c8a
+    - name: Toothy_Demon2_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 10
+        y: 11
+        width: 43
+        height: 30
+      spriteId: e8d4de1f75b52ca4eb88101b4449e36e
+    - name: Toothy_Demon2_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 10
+        y: 13
+        width: 44
+        height: 27
+      spriteId: ed32605111136bb408b14f1be63d58bc
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 86, y: 86}
+  canvasSize: {x: 64, y: 64}
