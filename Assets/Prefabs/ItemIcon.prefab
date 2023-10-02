@@ -327,7 +327,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 692416473f6db8d439bc3b6358786c50, type: 3}
   - {fileID: 21300000, guid: 3ee52edcd99413e4fbdaeefe57cde757, type: 3}
-  - {fileID: 21300000, guid: e682c938a1cf9d746a5c31ce4f895366, type: 3}
+  - {fileID: 21300000, guid: 86019a71e8a5419498eeb70df62807c0, type: 3}
   cleanup: 0
 --- !u!1 &7371842515623476106
 GameObject:
