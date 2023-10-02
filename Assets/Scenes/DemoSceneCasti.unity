@@ -3263,26 +3263,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4772132035756576101, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772132035756576101, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 5512154490082596241, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
-      propertyPath: _timeBetweenFurnitureSpawn
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6421301335354807132, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 6421301335354807132, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.92
-      objectReference: {fileID: 0}
     - target: {fileID: 7610799420559029837, guid: 546f5f8587a48004f94d621b436f306b, type: 3}
       propertyPath: m_Name
       value: Furniture Manager
