@@ -116,7 +116,7 @@ public class Player : MonoBehaviour, IDamageable
             }
             else
             {
-                AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerDamaged);
+                AudioManager.Instance.PlayerDamaged();
             }
             StartCoroutine(CanBeDamagedCoroutine());
             // TODO: Trigger invincibility frames

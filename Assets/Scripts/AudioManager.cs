@@ -116,6 +116,24 @@ public class AudioManager : MonoBehaviour
         _vacuumNoiseAudioSource.Stop();
     }
 
+    public void PlayerDamaged() {
+        PlaySfx(Sfx.PlayerDamaged);
+        StartCoroutine(AudioGlitchOnPlayerDamaged());
+    }
+
+    private IEnumerator AudioGlitchOnPlayerDamaged()
+    {
+        _musicAudioSource.pitch = 0.8f;
+        yield return new WaitForSeconds(0.25f);
+        _musicAudioSource.pitch = 0.85f;
+        yield return new WaitForSeconds(0.25f);
+        _musicAudioSource.pitch = 0.9f;
+        yield return new WaitForSeconds(0.25f);
+        _musicAudioSource.pitch = 0.95f;
+        yield return new WaitForSeconds(0.25f);
+        _musicAudioSource.pitch = 1.0f;
+    }
+
     public void PlayGameOverSfx()
     {
         if (!_gameOverAudioSource.isPlaying)
