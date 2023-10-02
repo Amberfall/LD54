@@ -48,6 +48,7 @@ MonoBehaviour:
   isPlayerAlive: 1
   _deathScreen: {fileID: 2381749046577538198}
   _cameraTarget: {fileID: 0}
+  _cinemachineConfiner2D: {fileID: 0}
 --- !u!1 &3478637584081660124
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8746609132663750625
 Transform:
   m_ObjectHideFlags: 0
@@ -255,7 +256,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 100
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.48235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

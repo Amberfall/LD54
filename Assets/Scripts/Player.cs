@@ -38,6 +38,8 @@ public class Player : MonoBehaviour, IDamageable
 
     [SerializeField] private ParticleSystem _psDash;
 
+    private string _currentAnim = "Player_Idle_anim";
+
     private void Awake()
     {
         instance = this;
@@ -69,9 +71,19 @@ public class Player : MonoBehaviour, IDamageable
             if (_rb.velocity.magnitude > 0)
             {
                 AudioManager.Instance.PlayFootstep();
+                if (_currentAnim != "Player_Run_anim")
+                {
+                    _currentAnim = "Player_Run_anim";
+                    _sp.GetComponent<Animator>().Play(_currentAnim);
+                }
             }
             else
             {
+                if (_currentAnim != "Player_Idle_anim")
+                {
+                    _currentAnim = "Player_Idle_anim";
+                    _sp.GetComponent<Animator>().Play(_currentAnim);
+                }
                 AudioManager.Instance.StopFootstep();
             }
         }
