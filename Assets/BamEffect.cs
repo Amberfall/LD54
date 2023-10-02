@@ -9,7 +9,7 @@ public class BamEffect : MonoBehaviour
     void Start()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = _sprites[Random.Range(0, _sprites.Length)];
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.4f);
     }
 
 
