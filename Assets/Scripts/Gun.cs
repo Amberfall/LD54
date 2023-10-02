@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _suckableShootSpeed = 30;
 
     [SerializeField] private ParticleSystem _ps;
+    [SerializeField] private GameObject _dustPuff;
 
 
     [Header("Bag Stuff")]
@@ -72,6 +73,8 @@ public class Gun : MonoBehaviour
 
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.PlayerShoot);
             CameraController.instance.CameraShake(0.2f, 1.5f);
+
+            Instantiate(_dustPuff, _gunTip.position, transform.rotation);
         }
     }
     public bool TryToShootEnemyToDash(Vector3 direction)
@@ -91,7 +94,8 @@ public class Gun : MonoBehaviour
             fifoSuckable.damage = (n > 0 && !fifoSuckable.isPowerUp) ? 3 * n * fifoSuckable.baseDamage : fifoSuckable.baseDamage;
 
             fifoSuckable.Shoot(-direction * _suckableShootSpeed);
-
+            Debug.Log("!!");
+            Instantiate(_dustPuff, _gunTip.position, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, -direction)));
         }
         return canDash;
     }
@@ -104,9 +108,11 @@ public class Gun : MonoBehaviour
             suckable.gameObject.SetActive(false);
             suckables.Add(suckable);
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.VacuumSuck);
-            if (suckable.isPowerUp) {
+            if (suckable.isPowerUp)
+            {
                 AudioManager.Instance.PlaySfx(AudioManager.Sfx.UpgradeEaten);
             }
+            Instantiate(_dustPuff, _gunTip.position, transform.rotation);
         }
         return canFitInBag;
     }

@@ -5,13 +5,13 @@ using TMPro;
 
 public class DamagePopup : MonoBehaviour
 {
-    private TextMeshPro _textMeshPro;
+    [SerializeField] private TextMeshPro _textMeshPro;
     [SerializeField] private TextMeshPro _textMeshProBG;
     [SerializeField] private float _amplitude = 1f;
 
     private void Awake()
     {
-        _textMeshPro = transform.GetComponent<TextMeshPro>();
+        // _textMeshPro = transform.GetComponent<TextMeshPro>();
     }
     public void Setup(int damageAmout)
     {

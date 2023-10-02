@@ -39,10 +39,10 @@ public class BagController : MonoBehaviour
                     tile.GetComponent<ItemTileController>().SetText("+50% DMG");
                     break;
                 case PowerUpType.defensive:
-                    tile.GetComponent<ItemTileController>().SetText("-20% DMG TAKEN");
+                    tile.GetComponent<ItemTileController>().SetText("+20% DEF");
                     break;
                 case PowerUpType.movement:
-                    tile.GetComponent<ItemTileController>().SetText("+50% MVT SPEED");
+                    tile.GetComponent<ItemTileController>().SetText("+50% MVT");
                     break;
             }
         }
