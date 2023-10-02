@@ -260,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -2.13, y: -13.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -471,8 +471,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 32.494137, y: 15.590299}
       - {x: -24.969765, y: 15.545019}
-      - {x: -24.8, y: -24.8}
-      - {x: 32.6, y: -24.8}
+      - {x: -24.866468, y: -23.13832}
+      - {x: 32.33413, y: -23.005386}
   m_UseDelaunayMesh: 0
 --- !u!4 &1374618985
 Transform:
@@ -734,7 +734,7 @@ Transform:
   m_GameObject: {fileID: 1676047536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.13, y: -13.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -822,7 +822,7 @@ Transform:
   m_GameObject: {fileID: 1809598243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -2.13, y: -13.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1619,11 +1619,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1365448638881012395, guid: 93a284d834c465e40a66f5c018508c9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.78
+      value: -4.34
       objectReference: {fileID: 0}
     - target: {fileID: 1365448638881012395, guid: 93a284d834c465e40a66f5c018508c9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32
+      value: -14.56
       objectReference: {fileID: 0}
     - target: {fileID: 1365448638881012395, guid: 93a284d834c465e40a66f5c018508c9e, type: 3}
       propertyPath: m_LocalPosition.z

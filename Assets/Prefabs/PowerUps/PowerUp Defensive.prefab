@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp Defensive
       objectReference: {fileID: 0}
+    - target: {fileID: 9111775647259026213, guid: e5f87219727760d44957c12295c496fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 377718606, guid: 17661b56e68dbdd4fb0148ccc394feef, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
