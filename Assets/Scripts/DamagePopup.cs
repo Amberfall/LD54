@@ -6,6 +6,7 @@ using TMPro;
 public class DamagePopup : MonoBehaviour
 {
     private TextMeshPro _textMeshPro;
+    [SerializeField] private TextMeshPro _textMeshProBG;
     [SerializeField] private float _amplitude = 1f;
 
     private void Awake()
@@ -15,6 +16,7 @@ public class DamagePopup : MonoBehaviour
     public void Setup(int damageAmout)
     {
         _textMeshPro.text = damageAmout.ToString();
+        _textMeshProBG.text = damageAmout.ToString();
         StartCoroutine(AnimationCoroutine());
     }
 

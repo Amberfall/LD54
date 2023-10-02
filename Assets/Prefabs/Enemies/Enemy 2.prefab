@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3073279045052444372, guid: 1f0f6e10176d3304bbdb77f014dc5c90, type: 3}
+      propertyPath: _yDamagePopupOffset
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3535261166313238002, guid: 1f0f6e10176d3304bbdb77f014dc5c90, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.48
