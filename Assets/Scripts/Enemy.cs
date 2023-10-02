@@ -17,12 +17,14 @@ public class Enemy : Suckable, IDamageable
     [SerializeField] private Lifebar _lifebar;
     private Toothy _toothy;
     [SerializeField] private int _score;
+    [SerializeField] private ParticleSystem _psSpawn;
     protected override void Initialization()
     {
         base.Initialization();
         _player = Player.instance;
         _lifebar = GetComponentInChildren<Lifebar>();
         _toothy = GetComponent<Toothy>();
+        _psSpawn.Play();
     }
     protected override void IdleState()
     {

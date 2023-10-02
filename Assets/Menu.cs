@@ -117,6 +117,7 @@ public class Menu : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Title")
         {
+            AudioManager.Instance.StopMusic();
             AudioManager.Instance.PlayMusic(AudioManager.Music.Menu);
         }
     }
