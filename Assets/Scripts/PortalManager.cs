@@ -19,6 +19,7 @@ public class PortalManager : MonoBehaviour
         _spawnPoints = GetComponentsInChildren<SpawnPoint>();
         currentWave = 0;
         StartCoroutine(FirstWaveTimer(5f));
+        WaveDisplay.instance.SetWaveNumber(currentWave, _portalWaves.Length);
     }
 
     public void SpawnNextWave()
@@ -31,7 +32,9 @@ public class PortalManager : MonoBehaviour
         {
             if (currentWave < _portalWaves.Length)
             {
+
                 Debug.Log("WAVE N°: " + currentWave.ToString() + " | Time: " + Time.time.ToString());
+                WaveDisplay.instance.SetWaveNumber(currentWave + 1, _portalWaves.Length);
                 ResetSpawnPoints();
                 int portalNumber = _portalWaves[currentWave].spawnPortals.Length;
                 while (portalNumber > 0)

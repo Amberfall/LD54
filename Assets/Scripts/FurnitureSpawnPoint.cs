@@ -7,7 +7,7 @@ public class FurnitureSpawnPoint : MonoBehaviour
     [SerializeField] private FurnitureList _furnitureList;
     [SerializeField] private Transform _bubbleSpawnTransform;
     [SerializeField] private GameObject _dropPositionPrefab;
-
+    public AudioManager.Sfx sfx;
 
     public void SpawnFurnitures()
     {
@@ -22,7 +22,7 @@ public class FurnitureSpawnPoint : MonoBehaviour
         _bubbleSpawnTransform.gameObject.SetActive(true);
 
         AudioManager.Instance.PlaySfx(AudioManager.Sfx.ItemAlert, transform.position);
-        AudioManager.Instance.PlaySfx(AudioManager.Sfx.OverHere, transform.position);
+        AudioManager.Instance.PlaySfx(sfx, transform.position);
 
         for (int i = 0; i < furnitureNumber; i++)
         {

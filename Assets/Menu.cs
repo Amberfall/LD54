@@ -95,6 +95,10 @@ public class Menu : MonoBehaviour
             ScoreManager.instance.ResetScoreMultiplier();
             ScoreManager.instance.score = 0;
         }
+        if (sceneName == "Win")
+        {
+            AudioManager.Instance.StopMusic();
+        }
     }
 
     private IEnumerator FadeIn()
