@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Enemy : Suckable, IDamageable
 {
+    public enum EnemyType
+    {
+        bubble,
+        lanky,
+        toothy,
+    }
+    public EnemyType enemyType;
     private Player _player;
     public float movementSpeed;
     [SerializeField] private Lifebar _lifebar;
@@ -19,8 +27,23 @@ public class Enemy : Suckable, IDamageable
 
         if (_player != null)
         {
-            Vector3 target = _player.transform.position;
-            rb.velocity = (_player.transform.position - transform.position).normalized * movementSpeed;
+            Vector3 distance = _player.transform.position - transform.position;
+            if (enemyType == EnemyType.bubble)
+            {
+                rb.velocity = distance.normalized * movementSpeed;
+            }
+            else if (enemyType == EnemyType.lanky)
+            {
+                if (distance.magnitude > GetComponent<Shooter>().minDistanceToShoot)
+                {
+                    rb.velocity = distance.normalized * movementSpeed;
+                }
+                else
+                {
+                    rb.velocity = distance.normalized * movementSpeed / 3f;
+                    GetComponent<Shooter>().Shoot();
+                }
+            }
         }
         else
         {
