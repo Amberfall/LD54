@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamageable
     public Vector2 gunDirection;
     [SerializeField] private SpriteRenderer _sp;
     [SerializeField] private SpriteRenderer _spGun;
+    [SerializeField] private Transform _ouchTransform;
 
     [Header("Dash stuff")]
     private bool _isDashing;
@@ -151,6 +152,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         _canBeDamaged = false;
         float time = 0;
+        _ouchTransform.gameObject.SetActive(true);
         while (time < _iFrameTime)
         {
             time += Time.deltaTime;
@@ -159,6 +161,7 @@ public class Player : MonoBehaviour, IDamageable
             _sp.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Cos(4 * Mathf.PI * time / _iFrameTime)));
             yield return null;
         }
+        _ouchTransform.gameObject.SetActive(false);
         //yield return new WaitForSeconds(_iFrameTime);
         _canBeDamaged = true;
     }
