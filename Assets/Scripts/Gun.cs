@@ -38,10 +38,12 @@ public class Gun : MonoBehaviour
         if (isSucking)
         {
             _ps.Play();
+            AudioManager.Instance.PlayVacuum();
         }
         else
         {
             _ps.Stop();
+            AudioManager.Instance.StopVacuum();
         }
     }
 
@@ -102,6 +104,9 @@ public class Gun : MonoBehaviour
             suckable.gameObject.SetActive(false);
             suckables.Add(suckable);
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.VacuumSuck);
+            if (suckable.isPowerUp) {
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.UpgradeEaten);
+            }
         }
         return canFitInBag;
     }

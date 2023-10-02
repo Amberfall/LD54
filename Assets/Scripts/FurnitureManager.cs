@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class FurnitureManager : MonoBehaviour
 {
+    public static FurnitureManager instance;
     private FurnitureSpawnPoint[] _furnitureSpawnPoint;
     [SerializeField] private float _timeBetweenFurnitureSpawn;
+    [SerializeField] private int _maxFurnitureNumber;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -18,8 +26,13 @@ public class FurnitureManager : MonoBehaviour
         while (GameManager.instance.isPlayerAlive)
         {
             yield return new WaitForSeconds(_timeBetweenFurnitureSpawn);
-            _furnitureSpawnPoint[Random.Range(0, _furnitureSpawnPoint.Length)].SpawnFurnitures();
-            AudioManager.Instance.PlaySfx(AudioManager.Sfx.ItemAlert);
+            int n = FindObjectsOfType<InanimateObject>().Length;
+            if (n < _maxFurnitureNumber)
+            {
+                _furnitureSpawnPoint[Random.Range(0, _furnitureSpawnPoint.Length)].SpawnFurnitures();
+            }
         }
     }
+
+
 }

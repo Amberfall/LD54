@@ -6,7 +6,7 @@ public class CameraTarget : MonoBehaviour
 {
     private Transform _playerTransform;
     private Vector2 _mousePosition;
-    [SerializeField] private Vector3 _cameraOffset;
+    public Vector3 cameraOffset;
     [SerializeField] private float _maxDistanceFromPlayer = 3;
 
     private void Start()
@@ -24,7 +24,7 @@ public class CameraTarget : MonoBehaviour
             {
                 averagePosition = averagePosition.normalized * _maxDistanceFromPlayer;
             }
-            transform.position = _playerTransform.position + averagePosition + _cameraOffset;
+            transform.position = _playerTransform.position + averagePosition + cameraOffset;
         }
     }
 }

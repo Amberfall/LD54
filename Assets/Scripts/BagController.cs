@@ -29,6 +29,28 @@ public class BagController : MonoBehaviour
         // Add tile to this, not just anywhere
         GameObject tile = Instantiate(itemTilePrefab, transform) as GameObject;
         tile.transform.SetParent(this.transform);
+        tile.GetComponent<ItemTileController>().SetSprite(suckable.suckableType);
+        if (suckable.isPowerUp)
+        {
+            var type = suckable.GetComponent<PowerUp>().powerUpType;
+            switch (type)
+            {
+                case PowerUpType.damage_multiplier:
+                    tile.GetComponent<ItemTileController>().SetText("+50% DMG");
+                    break;
+                case PowerUpType.defensive:
+                    tile.GetComponent<ItemTileController>().SetText("-20% DMG TAKEN");
+                    break;
+                case PowerUpType.movement:
+                    tile.GetComponent<ItemTileController>().SetText("+50% MVT SPEED");
+                    break;
+            }
+        }
+        else
+        {
+            tile.GetComponent<ItemTileController>().SetText(suckable.baseDamage.ToString() + " DMG");
+        }
+
 
         float top_pos = 1.0f;
 

@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b7cc5f703edc34d99abb5fe4c17d75, type: 3}
   m_Name: FurnitureList Doghouse
   m_EditorClassIdentifier: 
-  spawnRadius: 0
-  furnitures: []
+  spawnRadius: 2
+  furnitures:
+  - {fileID: 4959921866300490794, guid: c96857aabd4797844a3d3ec055c772ad, type: 3}
+  - {fileID: 4675150483145630286, guid: ed2ac383c295af147abea5f81e946d82, type: 3}
+  - {fileID: 7260634293662090765, guid: ad129a22e1c63cd459bacecec4e7157c, type: 3}
+  - {fileID: 9020091125857463282, guid: 7832b8a567707134aad0e93519e9bb88, type: 3}
+  weights: 0a000000320000003c00000014000000

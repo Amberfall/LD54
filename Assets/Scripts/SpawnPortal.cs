@@ -25,6 +25,7 @@ public class SpawnPortal : MonoBehaviour
     private IEnumerator SpawningCoroutine()
     {
         int waveNumberLeft = _waveNumber;
+        yield return new WaitForSeconds(1.5f);
         while (waveNumberLeft > 0)
         {
             waveNumberLeft--;

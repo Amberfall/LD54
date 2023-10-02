@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamageable
     public Vector2 gunDirection;
     [SerializeField] private SpriteRenderer _sp;
     [SerializeField] private SpriteRenderer _spGun;
+    [SerializeField] private Transform _ouchTransform;
 
     [Header("Dash stuff")]
     private bool _isDashing;
@@ -31,6 +32,9 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Life stuff")]
     public int maxLife;
     public int currentLife;
+    private bool _wasFlipped = true;
+
+    [SerializeField] private Transform _ropeAnchor;
 
     [SerializeField] private ParticleSystem _psDash;
 
@@ -53,12 +57,23 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (!_isDashing)
         {
-            _rb.velocity = _movementSpeed * _input.movement.normalized;
+            int n = Gun.instance.CheckForPowerUp(PowerUpType.movement);
+            if (n > 3)
+                n = 2;
+            _rb.velocity = _movementSpeed * _input.movement.normalized * (1 + n * 0.5f);
             // _rb.AddForce(_movementSpeed * _input.movement.normalized * 600);
             // if (_rb.velocity.magnitude > _movementSpeed)
             // {
             //     _rb.velocity = _rb.velocity.normalized * _movementSpeed;
             // }
+            if (_rb.velocity.magnitude > 0)
+            {
+                AudioManager.Instance.PlayFootstep();
+            }
+            else
+            {
+                AudioManager.Instance.StopFootstep();
+            }
         }
         else
         {
@@ -75,6 +90,11 @@ public class Player : MonoBehaviour, IDamageable
 
         _sp.flipX = gunDirection.x > 0;
         _spGun.flipY = gunDirection.x < 0;
+        if (_wasFlipped != _sp.flipX)
+        {
+            _ropeAnchor.localPosition = new Vector3(-_ropeAnchor.localPosition.x, _ropeAnchor.localPosition.y, _ropeAnchor.localPosition.z);
+        }
+        _wasFlipped = _sp.flipX;
 
     }
 
@@ -85,12 +105,19 @@ public class Player : MonoBehaviour, IDamageable
             // Check for reduced damage power up
             CameraController.instance.CameraShake(0.3f, 2.5f);
             int n = Gun.instance.CheckForPowerUp(PowerUpType.defensive);
-            currentLife -= (int)((float)amount / (n + 1));
+            if (n > 3)
+                n = 3;
+            currentLife -= (int)((float)amount * (1 - n * 0.3f));
             if (currentLife <= 0)
             {
+                currentLife = 0;
                 GameManager.instance.PlayerDied(transform.position);
                 Destroy(gameObject);
                 return;
+            }
+            else
+            {
+                AudioManager.Instance.PlayerDamaged();
             }
             StartCoroutine(CanBeDamagedCoroutine());
             // TODO: Trigger invincibility frames
@@ -108,6 +135,7 @@ public class Player : MonoBehaviour, IDamageable
                 _rb.velocity = direction * _dashSpeed;
                 _timeWhenDashed = Time.time;
                 StartCoroutine(DashCooldownCoroutine());
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.Dash); // TODO - player position
             }
         }
     }
@@ -123,7 +151,18 @@ public class Player : MonoBehaviour, IDamageable
     private IEnumerator CanBeDamagedCoroutine()
     {
         _canBeDamaged = false;
-        yield return new WaitForSeconds(_iFrameTime);
+        float time = 0;
+        _ouchTransform.gameObject.SetActive(true);
+        while (time < _iFrameTime)
+        {
+            time += Time.deltaTime;
+            if (time > _iFrameTime)
+                time = _iFrameTime;
+            _sp.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Cos(4 * Mathf.PI * time / _iFrameTime)));
+            yield return null;
+        }
+        _ouchTransform.gameObject.SetActive(false);
+        //yield return new WaitForSeconds(_iFrameTime);
         _canBeDamaged = true;
     }
 }

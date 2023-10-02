@@ -37,6 +37,7 @@ public class Enemy : Suckable, IDamageable
             {
                 // Self damage
                 Damage(damage / 2);
+                VFXManager.instance.SpawnCrashEffect(transform.position);
             }
         }
     }

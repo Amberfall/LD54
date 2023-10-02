@@ -9,6 +9,13 @@ public class InanimateObject : Suckable
         if (other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable))
         {
             damageable.Damage(damage);
+            VFXManager.instance.SpawnCrashEffect(transform.position);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.Crash, transform.position);
+        }
+        else
+        {
+            VFXManager.instance.SpawnCrashEffect(transform.position);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.Crash, transform.position);
         }
         Destroy(gameObject);
     }
@@ -22,6 +29,11 @@ public class InanimateObject : Suckable
     {
         base.GoToIdleState();
         gameObject.layer = LayerMask.NameToLayer("Default");
+    }
+
+    public void PlayAnimation()
+    {
+        GetComponentInChildren<Animator>().Play("Furniture");
     }
 
 }

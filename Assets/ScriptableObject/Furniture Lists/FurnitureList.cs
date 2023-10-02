@@ -7,4 +7,5 @@ public class FurnitureList : ScriptableObject
 {
     public float spawnRadius;
     public GameObject[] furnitures;
+    public int[] weights;
 }
