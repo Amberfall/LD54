@@ -5,6 +5,7 @@ using UnityEngine;
 public class VFXManager : MonoBehaviour
 {
     [SerializeField] private CrashEffect _crashEffect;
+    [SerializeField] private BamEffect _bamEffect;
 
     public static VFXManager instance;
 
@@ -16,5 +17,6 @@ public class VFXManager : MonoBehaviour
     public void SpawnCrashEffect(Vector3 position)
     {
         Instantiate(_crashEffect, position, Quaternion.identity);
+        Instantiate(_bamEffect, position, Quaternion.identity);
     }
 }

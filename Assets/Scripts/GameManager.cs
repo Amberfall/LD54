@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Cursor.visible = false;
     }
 
     void Start()
