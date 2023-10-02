@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d058c2b54d52f04cb23464ae2a89700
+guid: b652fe1f49d8da645b9abf2ce4fe47cb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,58 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Bubble_Demon
+  - name: Bubble_Demon2_Frame_0
     originalName: 
     pivot: {x: 0.50000006, y: -0.29032257}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
+      x: 50
+      y: 45
       width: 34
       height: 31
-    spriteID: 283a5d36264b243408e9b2bbd85a9176
+    spriteID: c279df1c99cc3064495d30928bf0b0cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 45}
+  - name: Bubble_Demon2_Frame_1
+    originalName: 
+    pivot: {x: 0.5135135, y: -0.27272728}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 90
+      width: 37
+      height: 33
+    spriteID: 480a775e346cc0d4e97222f2cce918eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 90}
+  - name: Bubble_Demon2_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 38
+      height: 35
+    spriteID: c2e564619b689b4469c06d624c380a56
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,18 +179,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Bubble_Demon_Frame_1
+  - name: Bubble_Demon2_Frame_3
     originalName: 
-    pivot: {x: 0.4333333, y: -0.29032257}
+    pivot: {x: 0.48648646, y: -0.27272728}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 46
+      x: 50
       y: 4
-      width: 30
-      height: 31
-    spriteID: 6a528aea88b28b7419110c1aa52f30a9
+      width: 37
+      height: 33
+    spriteID: 60498a9bccc72d6468b28b5abdbc9222
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,59 +198,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 46, y: 4}
-  - name: Bubble_Demon_Frame_2
+    uvTransform: {x: 50, y: 4}
+  - name: Bubble_Demon2_Frame_4
     originalName: 
-    pivot: {x: 0.4333333, y: -0.42857143}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 42
-      y: 43
-      width: 30
-      height: 28
-    spriteID: 21305b28eedc5b247b4d8ce880dd5777
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 42, y: 43}
-  - name: Bubble_Demon_Frame_3
-    originalName: 
-    pivot: {x: 0.44827583, y: -0.33333334}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 84
-      y: 4
-      width: 29
-      height: 30
-    spriteID: 50472dd1d3304ee4fa0f80435c6db30a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 84, y: 4}
-  - name: Bubble_Demon_Frame_4
-    originalName: 
-    pivot: {x: 0.4333333, y: -0.21212122}
+    pivot: {x: 0.5, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 43
-      width: 30
-      height: 33
-    spriteID: 9347775354a176446b37ea7e39fc0205
+      y: 47
+      width: 38
+      height: 35
+    spriteID: 34b1fcda2d8c3a24496f82b35863800f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,56 +218,56 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 43}
+    uvTransform: {x: 4, y: 47}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1103384036
-    name: Bubble_Demon
+    guid: -187984826
+    name: Bubble_Demon2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Bubble_Demon_Frame_0
+    - name: Bubble_Demon2_Frame_0
       frameIndex: 0
       cellRect:
         x: 7
         y: 9
         width: 34
         height: 31
-      spriteId: 283a5d36264b243408e9b2bbd85a9176
-    - name: Bubble_Demon_Frame_1
+      spriteId: c279df1c99cc3064495d30928bf0b0cc
+    - name: Bubble_Demon2_Frame_1
       frameIndex: 1
       cellRect:
-        x: 11
+        x: 5
         y: 9
-        width: 30
-        height: 31
-      spriteId: 6a528aea88b28b7419110c1aa52f30a9
-    - name: Bubble_Demon_Frame_2
+        width: 37
+        height: 33
+      spriteId: 480a775e346cc0d4e97222f2cce918eb
+    - name: Bubble_Demon2_Frame_2
       frameIndex: 2
       cellRect:
-        x: 11
-        y: 12
-        width: 30
-        height: 28
-      spriteId: 21305b28eedc5b247b4d8ce880dd5777
-    - name: Bubble_Demon_Frame_3
+        x: 5
+        y: 7
+        width: 38
+        height: 35
+      spriteId: c2e564619b689b4469c06d624c380a56
+    - name: Bubble_Demon2_Frame_3
       frameIndex: 3
       cellRect:
-        x: 11
-        y: 10
-        width: 29
-        height: 30
-      spriteId: 50472dd1d3304ee4fa0f80435c6db30a
-    - name: Bubble_Demon_Frame_4
+        x: 6
+        y: 9
+        width: 37
+        height: 33
+      spriteId: 60498a9bccc72d6468b28b5abdbc9222
+    - name: Bubble_Demon2_Frame_4
       frameIndex: 4
       cellRect:
-        x: 11
+        x: 5
         y: 7
-        width: 30
-        height: 33
-      spriteId: 9347775354a176446b37ea7e39fc0205
+        width: 38
+        height: 35
+      spriteId: 34b1fcda2d8c3a24496f82b35863800f
     linkedCells: []
     parentIndex: -1
   platformSettings: []
