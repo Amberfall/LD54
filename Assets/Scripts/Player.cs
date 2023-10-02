@@ -149,7 +149,16 @@ public class Player : MonoBehaviour, IDamageable
     private IEnumerator CanBeDamagedCoroutine()
     {
         _canBeDamaged = false;
-        yield return new WaitForSeconds(_iFrameTime);
+        float time = 0;
+        while (time < _iFrameTime)
+        {
+            time += Time.deltaTime;
+            if (time > _iFrameTime)
+                time = _iFrameTime;
+            _sp.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Cos(4 * Mathf.PI * time / _iFrameTime)));
+            yield return null;
+        }
+        //yield return new WaitForSeconds(_iFrameTime);
         _canBeDamaged = true;
     }
 }

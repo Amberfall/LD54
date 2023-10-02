@@ -27,7 +27,6 @@ public class FurnitureManager : MonoBehaviour
         {
             yield return new WaitForSeconds(_timeBetweenFurnitureSpawn);
             int n = FindObjectsOfType<InanimateObject>().Length;
-            Debug.Log(n);
             if (n < _maxFurnitureNumber)
             {
                 _furnitureSpawnPoint[Random.Range(0, _furnitureSpawnPoint.Length)].SpawnFurnitures();
