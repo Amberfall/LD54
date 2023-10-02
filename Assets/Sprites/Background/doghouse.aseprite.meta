@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: doghouse
     originalName: 
-    pivot: {x: 0.5, y: -0.4117647}
+    pivot: {x: 0.67241377, y: -0.2909091}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 88
-      height: 51
+      width: 58
+      height: 55
     spriteID: ffd19a2d3b27b754f940baf880969399
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: doghouse
       frameIndex: 0
       cellRect:
-        x: 20
-        y: 21
-        width: 88
-        height: 51
+        x: 25
+        y: 16
+        width: 58
+        height: 55
       spriteId: ffd19a2d3b27b754f940baf880969399
     linkedCells: []
     parentIndex: -1
