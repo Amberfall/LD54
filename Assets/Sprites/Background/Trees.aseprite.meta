@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa8006bf5de7b774883202d81835610d
+guid: 22a14e660cfcb3c47870121ebdf52a99
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: patio
+  - name: Trees
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.51724136, y: -0.13461539}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 480
-      height: 160
-    spriteID: 2dc59d95068df644cb637d848fcacaa5
+      width: 58
+      height: 52
+    spriteID: c997482ebbef8e6499484326ee0e220f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1495727549
-    name: patio
+    guid: -2051070611
+    name: Trees
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: patio
+    - name: Trees
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 480
-        height: 160
-      spriteId: 2dc59d95068df644cb637d848fcacaa5
+        x: 2
+        y: 7
+        width: 58
+        height: 52
+      spriteId: c997482ebbef8e6499484326ee0e220f
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 480, y: 160}
+  canvasSize: {x: 64, y: 64}
