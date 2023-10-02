@@ -10,10 +10,12 @@ public class SpawnPortal : MonoBehaviour
     [SerializeField] private float _timeBetweenEnemyWaves;
     [SerializeField] private int _waveNumber;
     private float enemySpawnDuration = 0.5f;
+    public bool isLastPortal;
 
     void Start()
     {
         StartCoroutine(SpawningCoroutine());
+
     }
 
     // Update is called once per frame
@@ -45,6 +47,10 @@ public class SpawnPortal : MonoBehaviour
             yield return new WaitForSeconds(_timeBetweenEnemyWaves);
         }
         PortalManager.instance.SpawnNextWave();
+        if (isLastPortal)
+        {
+            GameManager.instance.checkForWinCondition = true;
+        }
         Destroy(gameObject);
     }
 

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DeathScreen _deathScreen;
     [SerializeField] private Transform _cameraTarget;
     [SerializeField] private CinemachineConfiner2D _cinemachineConfiner2D;
+    public bool checkForWinCondition = false;
     private void Awake()
     {
         instance = this;
@@ -28,7 +29,26 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (checkForWinCondition)
+        {
+            checkForWinCondition = false;
+            StartCoroutine(CheckForWinCoroutine());
+        }
+    }
 
+    IEnumerator CheckForWinCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2);
+            {
+                int n = FindObjectsOfType<Enemy>().Length;
+                if (n == 0)
+                {
+                    SceneManager.LoadScene("Win");
+                }
+            }
+        }
     }
 
     public void PlayerDied(Vector3 position)

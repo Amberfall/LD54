@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class AudioManager : MonoBehaviour
         _gameOverAudioSource.clip = sfxDatabase[Sfx.GameOver];
 
         // This should be changed once there are multiple scenes
-        PlayMusic(Music.Level);
+        //PlayMusic(Music.Menu);
     }
 
 
@@ -117,7 +118,8 @@ public class AudioManager : MonoBehaviour
         _vacuumNoiseAudioSource.Stop();
     }
 
-    public void PlayerDamaged() {
+    public void PlayerDamaged()
+    {
         PlaySfx(Sfx.PlayerDamaged);
         StartCoroutine(AudioGlitchOnPlayerDamaged());
     }
@@ -147,13 +149,14 @@ public class AudioManager : MonoBehaviour
     {
         if (GameManager.instance.isPlayerAlive)
         {
-            AudioSource tempAudioSource = Instantiate(_audioSourcePrefab, new Vector3(0, 0 ,0), Quaternion.identity).GetComponent<AudioSource>();
+            AudioSource tempAudioSource = Instantiate(_audioSourcePrefab, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<AudioSource>();
             tempAudioSource.clip = sfxDatabase[sfx];
             tempAudioSource.Play();
         }
     }
 
-    public void PlaySfx(AudioManager.Sfx sfx, Vector3 position) {
+    public void PlaySfx(AudioManager.Sfx sfx, Vector3 position)
+    {
         if (GameManager.instance.isPlayerAlive)
         {
             AudioSource.PlayClipAtPoint(sfxDatabase[sfx], position);

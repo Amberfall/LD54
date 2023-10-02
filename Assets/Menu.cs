@@ -16,14 +16,6 @@ public class Menu : MonoBehaviour
         {
             StartCoroutine(FadeIn());
         }
-        if (SceneManager.GetActiveScene().name == "Title")
-        {
-            AudioManager.Instance.PlayMusic(AudioManager.Music.Menu);
-        }
-        if (SceneManager.GetActiveScene().name == "Main")
-        {
-            AudioManager.Instance.PlayMusic(AudioManager.Music.Level);
-        }
     }
 
     // Update is called once per frame
@@ -97,6 +89,12 @@ public class Menu : MonoBehaviour
             yield return null;
         }
         SceneManager.LoadScene(sceneName);
+        if (sceneName == "Main")
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Music.Level);
+            ScoreManager.instance.ResetScoreMultiplier();
+            ScoreManager.instance.score = 0;
+        }
     }
 
     private IEnumerator FadeIn()
@@ -112,5 +110,10 @@ public class Menu : MonoBehaviour
             yield return null;
         }
         _canClick = true;
+
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Music.Menu);
+        }
     }
 }

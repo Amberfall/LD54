@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4300190277438587623
+--- !u!1001 &2857097081963313645
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,24 +9,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
-      propertyPath: _waveNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemies.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
-      propertyPath: _enemies.Array.data[0]
+      propertyPath: _averageEnemyPerWave
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemies.Array.data[2]
       value: 
-      objectReference: {fileID: 1289781826004469637, guid: 5215585ffb4d1a14eb59bb9f3945a60d, type: 3}
+      objectReference: {fileID: 216338944214984859, guid: 37e9cae1d1a088d48825b66d13cda14e, type: 3}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _timeBetweenEnemyWaves
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: _enemySpawnWeight.Array.size
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemySpawnWeight.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemySpawnWeight.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632634173528881822, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
+      propertyPath: _enemySpawnWeight.Array.data[2]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5158492882649468625, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906033644168219926, guid: 8df01cac4b5e8f24f91fcb504e2e1b58, type: 3}
       propertyPath: m_Name
-      value: Portal 1
+      value: Portal 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
