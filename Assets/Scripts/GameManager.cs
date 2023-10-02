@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -66,6 +67,9 @@ public class GameManager : MonoBehaviour
             _deathScreen.SetScale(3 * time + 1);
             yield return null;
         }
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("GameOver");
+
         // TODO: Play player death animation
     }
 }

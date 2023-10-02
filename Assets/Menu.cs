@@ -6,18 +6,29 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    private bool _canClick;
+    private bool _canClick = true;
+    public bool fadeIn = true;
     [SerializeField] private Image _backDrop;
 
     void Start()
     {
-        StartCoroutine(FadeIn());
+        if (fadeIn)
+        {
+            StartCoroutine(FadeIn());
+        }
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Music.Menu);
+        }
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Music.Level);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
     public void OnPlay()
     {
@@ -64,6 +75,16 @@ public class Menu : MonoBehaviour
         }
     }
 
+    public void OnSwitchSceneTo(string name)
+    {
+        if (_canClick)
+        {
+            _canClick = false;
+            StartCoroutine(FadeOutAndLoadScene(name));
+        }
+    }
+
+
     private IEnumerator FadeOutAndLoadScene(string sceneName)
     {
         float time = 0;
@@ -75,7 +96,7 @@ public class Menu : MonoBehaviour
             _backDrop.color = new Color(46 / 255.0f, 44 / 255.0f, 59 / 255.0f, time * 2);
             yield return null;
         }
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(sceneName);
     }
 
     private IEnumerator FadeIn()

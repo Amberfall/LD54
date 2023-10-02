@@ -42,7 +42,7 @@ public class BagController : MonoBehaviour
                     tile.GetComponent<ItemTileController>().SetText("+20% DEF");
                     break;
                 case PowerUpType.movement:
-                    tile.GetComponent<ItemTileController>().SetText("+50% MVT");
+                    tile.GetComponent<ItemTileController>().SetText("+50% MOVE");
                     break;
             }
         }

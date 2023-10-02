@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 82aef2f06508d294b8837ce18498254c
   - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: f9b9ea343b2e8b54798369d0bd7b8396
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3613b8c4c1345df42b9e1b090b085c6d
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 69231acf3918aa549ab6cfa772c28c26
+  - enabled: 0
     path: Assets/Scenes/DemoSceneMayaCloneCasti.unity
     guid: e2dbce9abbc413a4b918bd74830b35cc
   - enabled: 0
@@ -23,7 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MishaScene.unity
     guid: 1f2c567e776188205b64350ac942a0c6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DemoSceneMayaClone.unity
     guid: b9bb539f86aadf742a55f987eb6b3847
   m_configObjects: {}
